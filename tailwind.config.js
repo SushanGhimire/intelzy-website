@@ -12,6 +12,7 @@ module.exports = {
         68: "17rem",
       },
       fontFamily: {
+        lato: ["Lato", "sans-serif"],
         popping: ["Poppins", "sans-serif"],
       },
     },
