@@ -1,0 +1,27 @@
+import React from "react";
+
+function FlexCard({ content, flex, img, des }) {
+  return (
+    <div
+      className={`md:flex ${flex} width-padding items-center mt-10 space-x-10`}
+    >
+      {/* content  */}
+      <div
+        className={`flex-1 text-center md:text-start ${
+          flex === "flex-row " ? "md:pr-10" : "md:pl-10"
+        }`}
+      >
+        <div className=" text-2xl md:text-4xl  font-black text-gray-800">
+          {content}
+        </div>
+        <div className="mt-2 text-gray-700 text-sm md:text-base">{des}</div>
+      </div>
+      {/* image  */}
+      <div className="flex-1 mt-10 md:mt-0">
+        <img src={img} alt="" />
+      </div>
+    </div>
+  );
+}
+
+export default FlexCard;

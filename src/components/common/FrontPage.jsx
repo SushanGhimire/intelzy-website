@@ -5,7 +5,7 @@ function FrontPage() {
   return (
     <div className="width-padding pt-36 pb-12 flex flex-col ">
       {/* top part  */}
-      <div className="md:flex justify-center items-center">
+      <div className="md:flex justify-center items-center text-center md:text-start">
         <div className="flex-1">
           <div
             className="text-4xl lg:text-5xl 2xl:text-6xl font-black text-gray-800"
@@ -30,12 +30,12 @@ function FrontPage() {
             </button>
           </div>
         </div>
-        <div className="flex-1 mt-5 md:mt-0">
+        <div className="flex-1 mt-10 md:mt-0">
           <img src={front} alt="" className="mx-auto" />
         </div>
       </div>
       {/* learn more  */}
-      <div className="justify-center flex flex-col cursor-pointer">
+      <div className="justify-center flex flex-col cursor-pointer mt-10 md:mt-0">
         <div className="inline-block uppercase mx-auto text-xs tracking-wide">
           Learn more
         </div>
