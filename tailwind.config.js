@@ -6,7 +6,10 @@ module.exports = {
       width: {
         100: "32rem",
       },
-      colors: {},
+      colors: {
+        footer: "#E9EBEE",
+        intelzy: "#F8373F",
+      },
       spacing: {
         100: "30rem",
         68: "17rem",

@@ -20,12 +20,7 @@ function FrontPage() {
             1 million users worldwide.
           </div>
           <div>
-            <button
-              style={{
-                backgroundColor: "#F8373F",
-              }}
-              className="text-white rounded-full py-3 px-6 mt-3"
-            >
+            <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
               Start Now
             </button>
           </div>
