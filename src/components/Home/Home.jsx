@@ -4,6 +4,9 @@ import FrontPage from "../common/FrontPage";
 import front from "../../assets/images/front.svg";
 import front2 from "../../assets/images/front2.svg";
 import front3 from "../../assets/images/front3.svg";
+import ThreeJsPart from "./ThreeJsPart";
+import Partners from "./Partners";
+import Newslatters from "./Newslatters";
 function Home() {
   let flexCard = [
     {
@@ -40,6 +43,9 @@ function Home() {
           />
         );
       })}
+      <ThreeJsPart />
+      <Partners />
+      <Newslatters />
     </div>
   );
 }

@@ -60,7 +60,7 @@ function Footer() {
         })}
       </div>
       {/* copyright  */}
-      <div className=" px-2.5 text-gray-800 font-medium mt-5">
+      <div className=" px-2.5 text-gray-800 font-medium mt-5 pb-10">
         &copy;Intelzy • A Complete IT Solution
       </div>
     </div>

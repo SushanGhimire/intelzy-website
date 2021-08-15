@@ -5,7 +5,7 @@ function FrontPage() {
   return (
     <div className="width-padding pt-36 pb-12 flex flex-col ">
       {/* top part  */}
-      <div className="md:flex justify-center items-center text-center md:text-start">
+      <div className="md:flex justify-center items-center text-center md:text-left">
         <div className="flex-1">
           <div
             className="text-4xl lg:text-5xl 2xl:text-6xl font-black text-gray-800"
