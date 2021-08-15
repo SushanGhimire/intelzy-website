@@ -8,7 +8,7 @@ function FrontPage() {
       <div className="md:flex justify-center items-center">
         <div className="flex-1">
           <div
-            className="text-4xl lg:text-5xl 2xl:text-6xl font-black"
+            className="text-4xl lg:text-5xl 2xl:text-6xl font-black text-gray-800"
             style={{
               lineHeight: 1.2,
             }}
