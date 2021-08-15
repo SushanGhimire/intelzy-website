@@ -50,7 +50,7 @@ function Footer() {
               <div className="text-lg uppercase text-intelzy tracking-wide">
                 {title}
               </div>
-              <ul className="space-y-3 text-gray-700 md:text-xs mt-3">
+              <ul className="space-y-3 text-gray-700 md:text-xs 2xl:text-base mt-3">
                 {lists.map((list, index) => {
                   return <li key={index}>{list}</li>;
                 })}
