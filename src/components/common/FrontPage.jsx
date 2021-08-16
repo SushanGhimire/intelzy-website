@@ -33,14 +33,17 @@ function FrontPage() {
           </div>
         </div>
         {/* learn more  */}
-        <div className="justify-center flex flex-col cursor-pointer mt-10 hover:text-intelzy group">
+        <a
+          href={window.location.origin + "#scroll"}
+          className="justify-center flex flex-col cursor-pointer mt-10 hover:text-intelzy group"
+        >
           <div className="inline-block uppercase mx-auto text-xs tracking-wide">
             Learn more
           </div>
           <div className="mx-auto ">
             <KeyboardArrowDownOutlinedIcon />
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ function FlexCard({ content, flex, img, des }) {
   return (
     <div
       className={`md:flex ${flex} items-center mt-10 space-x-10  width mx-auto width-padding`}
+      id="scroll"
     >
       {/* content  */}
       <div
