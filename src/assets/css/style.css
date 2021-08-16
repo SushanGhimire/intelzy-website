@@ -1,0 +1,16 @@
+.width{
+    max-width: 940px;
+}
+
+.frontpage{
+    padding-top: 48px;
+    padding-bottom: 48px;
+    min-height: 700px;
+}
+.frontBack{
+    margin: 0px auto;
+    background-position: 100% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}

@@ -1,16 +1,18 @@
 import React from "react";
-import front from "../../assets/images/front.svg";
+import front from "../../assets/images/frontpage.png";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 function FrontPage() {
   return (
-    <div className="width-padding pt-36 pb-12 flex flex-col ">
+    <div className="frontpage flex flex-col width mx-auto width-padding">
       {/* top part  */}
-      <div className="md:flex justify-center items-center text-center md:text-left">
+      <div className="md:flex flex-1 justify-center  text-center md:text-left  items-center">
         <div className="flex-1">
           <div
-            className="text-4xl lg:text-5xl 2xl:text-6xl font-black text-gray-800"
+            className=" font-black text-gray-800"
             style={{
               lineHeight: 1.2,
+              fontSize: window.innerWidth < 1024 ? "46px" : "48px",
+              fontWeight: 700,
             }}
           >
             A crypto wallet & gateway to blockchain apps
@@ -26,11 +28,18 @@ function FrontPage() {
           </div>
         </div>
         <div className="flex-1 mt-10 md:mt-0">
-          <img src={front} alt="" className="mx-auto" />
+          <img
+            src={front}
+            alt=""
+            className="mx-auto"
+            style={{
+              height: "400px",
+            }}
+          />
         </div>
       </div>
       {/* learn more  */}
-      <div className="justify-center flex flex-col cursor-pointer mt-10 md:mt-0">
+      <div className="justify-center flex flex-col cursor-pointer mt-10 md:mt-0 ">
         <div className="inline-block uppercase mx-auto text-xs tracking-wide">
           Learn more
         </div>

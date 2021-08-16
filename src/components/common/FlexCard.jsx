@@ -3,7 +3,7 @@ import React from "react";
 function FlexCard({ content, flex, img, des }) {
   return (
     <div
-      className={`md:flex ${flex} width-padding items-center mt-10 space-x-10`}
+      className={`md:flex ${flex} items-center mt-10 space-x-10  width mx-auto width-padding`}
     >
       {/* content  */}
       <div

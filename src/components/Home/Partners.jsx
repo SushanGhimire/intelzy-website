@@ -10,7 +10,7 @@ import p8 from "../../assets/images/partners/g8.png";
 function Partners() {
   const logos = [p1, p2, p3, p4, p5, p6, p7, p8];
   return (
-    <div className="flex flex-col width-padding justify-center mt-20">
+    <div className="flex flex-col  width mx-auto justify-center mt-20">
       <div className="mx-auto title-text">
         Your key to blockchain applications
       </div>
@@ -24,7 +24,7 @@ function Partners() {
         {logos.map((logo, index) => {
           return (
             <div className="col-span-1" key={index}>
-              <img src={logo} className="mx-auto" alt="" />
+              <img src={logo} className="mx-auto w-32 md:w-full" alt="" />
             </div>
           );
         })}

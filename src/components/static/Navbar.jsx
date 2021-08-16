@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/images/intelzyLogo.png";
+import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 function Navbar({ loggedIn, role }) {
   const [width, setWidth] = useState(window.innerWidth);
   const [position, setPosition] = useState(0);
@@ -22,10 +23,6 @@ function Navbar({ loggedIn, role }) {
     },
     {
       name: "About Us",
-      path: "/about-us",
-    },
-    {
-      name: "Career",
       path: "/about-us",
     },
   ];
@@ -70,52 +67,57 @@ function Navbar({ loggedIn, role }) {
     };
   });
   return (
-    <div className=" w-full fixed top-0 right-0 z-50 bg-white">
-      <div
-        className={`w-full flex justify-between py-6 width-padding shadow items-center animation`}
-      >
-        {/* logo  */}
-        <Link
-          to="/"
-          onClick={() => {
-            scrollToTop();
-          }}
-          className="w-32"
+    <div className=" w-full bg-white sticky top-0 right-0 z-50 width-padding">
+      <div className="width  mx-auto">
+        <div
+          className={`w-full flex justify-between py-6  items-center animation`}
         >
-          <img src={logo} className="w-full" alt="" />
-        </Link>
-        {/* for laptops */}
-        {/* content  */}
-        {width > 1023 && (
-          <div className="flex space-x-5 items-center">
-            {contents.map((content, index) => {
-              const { name, path } = content;
-              return (
+          {/* logo  */}
+          <Link
+            to="/"
+            onClick={() => {
+              scrollToTop();
+            }}
+            className="w-32"
+          >
+            <img src={logo} className="w-full" alt="" />
+          </Link>
+          {/* for laptops */}
+          {/* content  */}
+          {width > 1023 && (
+            <div className="flex space-x-5 items-center">
+              {contents.map((content, index) => {
+                const { name, path } = content;
+                return (
+                  <Link
+                    to={path}
+                    key={index}
+                    className="animation hover:text-primaryYellow"
+                    onClick={() => {
+                      scrollToTop();
+                    }}
+                  >
+                    {name}
+                  </Link>
+                );
+              })}
+              {loggedIn && role === "ROLE_ADMIN" && (
                 <Link
-                  to={path}
-                  key={index}
-                  className="animation hover:text-primaryYellow"
-                  onClick={() => {
-                    scrollToTop();
-                  }}
+                  to="/dashboard"
+                  className="  text-gray-700 px-8 py-2 rounded-full text-sm sm:text-base mb-1"
                 >
-                  {name}
+                  Dashboard
                 </Link>
-              );
-            })}
-            {loggedIn && role === "ROLE_ADMIN" && (
-              <Link
-                to="/dashboard"
-                className="  text-gray-700 px-8 py-2 rounded-full text-sm sm:text-base mb-1"
-              >
-                Dashboard
-              </Link>
-            )}
-          </div>
-        )}
-        {width < 1024 && (
-          <MenuIcon className="cursor-pointer" onClick={toggleMobileSidebar} />
-        )}
+              )}
+            </div>
+          )}
+          {width < 1024 && (
+            <MenuIcon
+              className="cursor-pointer"
+              onClick={toggleMobileSidebar}
+            />
+          )}
+        </div>
       </div>
       {/* for ipads and mobiles */}
       {width < 1024 && (
