@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-function FlexCard({ content, flex, img, des }) {
+function FlexCard({ content, flex, img, des, aos }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div
       className={`md:flex ${flex} items-center mt-10 space-x-10  width mx-auto width-padding`}
@@ -16,7 +21,12 @@ function FlexCard({ content, flex, img, des }) {
         <div className="mt-2 text-gray-700 text-sm md:text-base">{des}</div>
       </div>
       {/* image  */}
-      <div className="flex-1 mt-10 md:mt-0">
+      <div
+        className="flex-1 mt-10 md:mt-0"
+        data-aos={aos}
+        data-aos-anchor-placement="top-bottom"
+        data-aos-duration="1500"
+      >
         <img src={img} alt="" />
       </div>
     </div>
