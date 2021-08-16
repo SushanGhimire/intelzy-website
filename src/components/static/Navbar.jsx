@@ -8,22 +8,27 @@ function Navbar({ loggedIn, role }) {
   const [position, setPosition] = useState(0);
   const mobileSidebar = useRef();
   const coverAll = useRef();
+  const [showIndex, setShowIndex] = useState("");
   const contents = [
     {
-      name: "Home",
-      path: "/",
+      name: "Features",
+      path: "/features",
+      subLists: ["Feature-1", "Feature-2"],
     },
     {
-      name: "Services",
-      path: "/services",
+      name: "Support",
+      path: "/support",
+      subLists: ["Support-1", "Support-2"],
     },
     {
-      name: "Contact Us",
-      path: "/contact-us",
+      name: "About",
+      path: "/about",
+      subLists: ["About-1", "About-2"],
     },
     {
-      name: "About Us",
-      path: "/about-us",
+      name: "Build",
+      path: "/build",
+      subLists: ["Build-1", "Build-2"],
     },
   ];
   // toggle in mobile
@@ -67,11 +72,12 @@ function Navbar({ loggedIn, role }) {
     };
   });
   return (
-    <div className=" w-full bg-white sticky top-0 right-0 z-50 width-padding">
-      <div className="width  mx-auto">
-        <div
-          className={`w-full flex justify-between py-6  items-center animation`}
-        >
+    <div
+      className=" w-full bg-white sticky top-0 right-0 z-50 width-padding"
+      onMouseLeave={() => setShowIndex("0")}
+    >
+      <div className="width  mx-auto  py-6 lg:py-0">
+        <div className={`w-full flex justify-between items-center animation`}>
           {/* logo  */}
           <Link
             to="/"
@@ -85,32 +91,49 @@ function Navbar({ loggedIn, role }) {
           {/* for laptops */}
           {/* content  */}
           {width > 1023 && (
-            <div className="flex space-x-5 items-center">
+            <div className="flex space-x-7 items-center text-gray-800">
               {contents.map((content, index) => {
-                const { name, path } = content;
+                const { name, path, subLists } = content;
                 return (
-                  <Link
-                    to={path}
-                    key={index}
-                    className="animation hover:text-primaryYellow"
-                    onClick={() => {
-                      scrollToTop();
-                    }}
-                  >
-                    {name}
-                  </Link>
+                  <div key={index} className="relative">
+                    <Link
+                      to={path}
+                      className="animation flex  py-6  space-x-1 hover:text-intelzy"
+                      onClick={() => {
+                        scrollToTop();
+                      }}
+                      onMouseEnter={() => setShowIndex(index)}
+                    >
+                      <div> {name}</div>
+                      <div>
+                        <KeyboardArrowDownOutlinedIcon />
+                      </div>
+                    </Link>
+                    {showIndex === index && (
+                      <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-14 w-32 flex flex-col rounded-lg">
+                        {subLists.map((sub, index) => {
+                          return (
+                            <div
+                              className="p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy"
+                              key={index}
+                            >
+                              {sub}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
-              {loggedIn && role === "ROLE_ADMIN" && (
-                <Link
-                  to="/dashboard"
-                  className="  text-gray-700 px-8 py-2 rounded-full text-sm sm:text-base mb-1"
-                >
-                  Dashboard
-                </Link>
-              )}
+              <div>
+                <button className="text-white rounded-full py-2 px-6  bg-intelzy">
+                  Career
+                </button>
+              </div>
             </div>
           )}
+
           {width < 1024 && (
             <MenuIcon
               className="cursor-pointer"
@@ -143,29 +166,44 @@ function Navbar({ loggedIn, role }) {
                 <img src={logo} alt="" />
               </Link>
               {contents.map((content, index) => {
-                const { name, path } = content;
+                const { name, path, subLists } = content;
                 return (
-                  <Link
-                    to={path}
-                    key={index}
-                    onClick={() => {
-                      toggleMobileSidebar();
-                      scrollToTop();
-                    }}
-                    className="py-2 "
-                  >
-                    {name}
-                  </Link>
+                  <div key={index} className={`flex flex-col `}>
+                    <Link
+                      to={path}
+                      className="py-2 flex space-x-1  justify-center"
+                      onClick={() => setShowIndex(index)}
+                    >
+                      <div>{name}</div>
+                      <div>
+                        <KeyboardArrowDownOutlinedIcon />
+                      </div>
+                    </Link>
+                    <div
+                      className={` animation space-y-1 overflow-hidden ${
+                        showIndex === index
+                          ? "max-height-drop bg-red-50 rounded-md "
+                          : "max-h-0"
+                      }`}
+                    >
+                      {subLists.map((sub, index) => {
+                        return (
+                          <div
+                            className="py-2"
+                            key={index}
+                            onClick={() => {
+                              toggleMobileSidebar();
+                              scrollToTop();
+                            }}
+                          >
+                            {sub}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 );
               })}
-              {loggedIn && role === "ROLE_ADMIN" && (
-                <Link
-                  to="/dashboard"
-                  className=" text-gray-700 px-8 py-2 rounded-full text-sm sm:text-base mb-1"
-                >
-                  Dashboard
-                </Link>
-              )}
             </div>
           </div>
         </>

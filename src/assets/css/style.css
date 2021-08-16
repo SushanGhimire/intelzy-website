@@ -5,7 +5,6 @@
 .frontpage{
     padding-top: 48px;
     padding-bottom: 48px;
-    min-height: 700px;
 }
 .frontBack{
     margin: 0px auto;
@@ -14,3 +13,13 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
 }
+
+.box-shadow{
+    box-shadow: 0px 0px 32px -19px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 32px -19px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 32px -19px rgba(0,0,0,1);
+}
+
+.max-height-drop {
+    max-height: 200px;
+  }
