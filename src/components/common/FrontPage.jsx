@@ -1,6 +1,7 @@
 import React from "react";
 import front from "../../assets/images/frontpage.png";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
+import { Link } from "react-scroll";
 function FrontPage() {
   return (
     <div className="min-h-screen flex flex-col width mx-auto width-padding">
@@ -33,8 +34,10 @@ function FrontPage() {
           </div>
         </div>
         {/* learn more  */}
-        <a
-          href={window.location.origin + "#scroll"}
+        <Link
+          activeClass="active"
+          to="scroll"
+          spy={true}
           className="justify-center flex flex-col cursor-pointer mt-10 hover:text-intelzy group"
         >
           <div className="inline-block uppercase mx-auto text-xs tracking-wide">
@@ -43,7 +46,7 @@ function FrontPage() {
           <div className="mx-auto ">
             <KeyboardArrowDownOutlinedIcon />
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

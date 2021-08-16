@@ -76,7 +76,7 @@ function Navbar({ loggedIn, role }) {
       className=" w-full bg-white sticky top-0 right-0 z-50 width-padding"
       onMouseLeave={() => setShowIndex("0")}
     >
-      <div className="width  mx-auto  py-6 lg:py-0">
+      <div className="width  mx-auto  py-9 lg:py-0 ">
         <div className={`w-full flex justify-between items-center animation`}>
           {/* logo  */}
           <Link
@@ -84,7 +84,7 @@ function Navbar({ loggedIn, role }) {
             onClick={() => {
               scrollToTop();
             }}
-            className="w-32"
+            className="w-40"
           >
             <img src={logo} className="w-full" alt="" />
           </Link>
@@ -98,7 +98,7 @@ function Navbar({ loggedIn, role }) {
                   <div key={index} className="relative">
                     <Link
                       to={path}
-                      className="animation flex  py-6  space-x-1 hover:text-intelzy"
+                      className="animation flex  py-9  space-x-1 hover:text-intelzy"
                       onClick={() => {
                         scrollToTop();
                       }}

@@ -35,6 +35,8 @@ function Footer() {
       ],
     },
   ];
+  var d = new Date();
+  var n = d.getFullYear();
   return (
     <div className="bg-footer py-12 width-padding">
       <div className=" flex flex-col width mx-auto">
@@ -62,7 +64,7 @@ function Footer() {
         </div>
         {/* copyright  */}
         <div className=" px-2.5 text-gray-800 font-medium mt-5 pb-10">
-          &copy;Intelzy • A Complete IT Solution
+          &copy;{n} Intelzy
         </div>
       </div>
     </div>
