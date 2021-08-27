@@ -73,7 +73,9 @@ function Navbar({ loggedIn, role }) {
   });
   return (
     <div
-      className=" w-full bg-white sticky top-0 right-0 z-50 width-padding"
+      className={`w-full fixed top-0 right-0 z-50 width-padding animation ${
+        position ? "bg-white" : ""
+      }`}
       onMouseLeave={() => setShowIndex("0")}
     >
       <div className="width  mx-auto  py-9 lg:py-0 ">
@@ -98,7 +100,8 @@ function Navbar({ loggedIn, role }) {
                   <div key={index} className="relative">
                     <Link
                       to={path}
-                      className="animation flex  py-9  space-x-1 hover:text-intelzy"
+                      className={`animation flex  py-9  space-x-1  
+                      ${position ? "hover:text-intelzy" : " hover:text-white"}`}
                       onClick={() => {
                         scrollToTop();
                       }}
@@ -110,11 +113,11 @@ function Navbar({ loggedIn, role }) {
                       </div>
                     </Link>
                     {showIndex === index && (
-                      <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-14 w-32 flex flex-col rounded-lg">
+                      <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-16 w-32 flex flex-col rounded-lg">
                         {subLists.map((sub, index) => {
                           return (
                             <div
-                              className="p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy"
+                              className={`p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy `}
                               key={index}
                             >
                               {sub}

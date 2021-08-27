@@ -2,6 +2,12 @@
     max-width: 940px;
 }
 
+.inside{
+    z-index: -1;
+}
+.outside{
+    z-index: 1;
+}
 .frontpage{
     padding-top: 48px;
     padding-bottom: 48px;
@@ -22,4 +28,8 @@
 
 .max-height-drop {
     max-height: 200px;
+  }
+
+  .clip{
+    clip-path: polygon(100% 0, 100% 49%, 0 78%, 0 0);
   }
