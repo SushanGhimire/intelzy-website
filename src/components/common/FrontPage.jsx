@@ -6,7 +6,10 @@ import { Link } from "react-scroll";
 function FrontPage() {
   return (
     <div className="min-h-screen relative  bg-center bg-no-repeat">
-      <div className="absolute top-0 right-0 w-full h-full clip md:bg-gradient-to-r opacity-80 from-blue-400 to-intelzy via-indigo-500 animate-gradient-x z-0 mix-blend-multiply"></div>
+      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-r opacity-80 from-blue-400 to-intelzy via-indigo-500 
+      animate-gradient-x z-0 mix-blend-multiply" style={{
+        clipPath:window.innerWidth < 768 ? `polygon(100% 0, 100% 25%, 0 36%, 0 0)`: `polygon(100% 0, 100% 49%, 0 78%, 0 0)`,
+      }}></div>
       {/* <div className="absolute top-0 right-0 w-full h-full">
         <img
           src={bg}
