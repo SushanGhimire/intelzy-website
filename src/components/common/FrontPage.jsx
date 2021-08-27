@@ -2,18 +2,18 @@ import React from "react";
 import front from "../../assets/images/frontpageimg.png";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { Link } from "react-scroll";
-import bg from "../../assets/images/frontBg3.svg";
+// import bg from "../../assets/images/frontBg.svg";
 function FrontPage() {
   return (
     <div className="min-h-screen relative  bg-center bg-no-repeat">
-      {/* <div className="absolute top-0 right-0 w-full h-full clip md:bg-gradient-to-r opacity-80 from-blue-400 to-intelzy via-indigo-500 animate-gradient-x z-0 mix-blend-multiply"></div> */}
-      <div className="absolute top-0 right-0 w-full h-full">
+      <div className="absolute top-0 right-0 w-full h-full clip md:bg-gradient-to-r opacity-80 from-blue-400 to-intelzy via-indigo-500 animate-gradient-x z-0 mix-blend-multiply"></div>
+      {/* <div className="absolute top-0 right-0 w-full h-full">
         <img
           src={bg}
           alt=""
           className="w-full h-full object-cover object-center"
         />
-      </div>
+      </div> */}
       <div className="flex flex-col width mx-auto width-padding ">
         {/* top part  */}
         <div className=" flex flex-1 flex-col justify-center  text-center md:text-left  items-center mt-32">

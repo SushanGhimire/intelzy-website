@@ -23,7 +23,7 @@ function FlexCard({ content, flex, img, des, aos }) {
       {/* image  */}
       <div
         className="flex-1 mt-10 md:mt-0"
-        data-aos={aos}
+        data-aos={ window.innerWidth > 768 && aos}
         data-aos-anchor-placement="top-bottom"
         data-aos-duration="1700"
       >
