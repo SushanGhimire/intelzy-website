@@ -3,8 +3,10 @@ import React from "react";
 function Newslatters() {
   return (
     <div className="flex flex-col width-padding justify-center my-20">
-      <div className="mx-auto title-text">Receive our Newsletter</div>
-      <div className="text-gray-700 mx-auto text-center mt-2">
+      <div className="mx-auto title-text dark:text-gray-200">
+        Receive our Newsletter
+      </div>
+      <div className="text-gray-700 mx-auto text-center mt-2 dark:text-gray-400">
         Sign up to receive updates and announcements
       </div>
       <div className="mx-auto ">

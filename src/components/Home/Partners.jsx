@@ -7,14 +7,16 @@ import p5 from "../../assets/images/partners/g5.png";
 import p6 from "../../assets/images/partners/g6.png";
 import p7 from "../../assets/images/partners/g7.png";
 import p8 from "../../assets/images/partners/g8.png";
+
 function Partners() {
   const logos = [p1, p2, p3, p4, p5, p6, p7, p8];
+
   return (
-    <div className="flex flex-col  width mx-auto justify-center mt-20">
-      <div className="mx-auto title-text">
+    <div className={`flex flex-col  width mx-auto justify-center mt-20`}>
+      <div className="mx-auto title-text dark:text-gray-200">
         Your key to blockchain applications
       </div>
-      <div className="text-center text-gray-700 mt-2">
+      <div className="text-center text-gray-700 mt-2 dark:text-gray-400">
         MetaMask provides an essential utility for blockchain newcomers, token
         traders, crypto gamers, and developers. Over a million downloads and
         counting!
