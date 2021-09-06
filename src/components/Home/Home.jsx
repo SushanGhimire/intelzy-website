@@ -33,7 +33,12 @@ function Home() {
   ];
   return (
     <div className=" flex flex-col">
-      <FrontPage />
+      <FrontPage
+        header="crypto wallet & gateway to blockchain apps"
+        des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
+        start="true"
+        scroll="scroll"
+      />
       {flexCard.map((card, index) => {
         const { content, flex, des, img, aos } = card;
         return (

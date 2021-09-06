@@ -4,7 +4,7 @@ import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownO
 import { Link } from "react-scroll";
 import { useSelector } from "react-redux";
 // import bg from "../../assets/images/frontBg.svg";
-function FrontPage() {
+function FrontPage({ header, des, start, scroll }) {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   const [width, setWidth] = useState(window.innerWidth);
   const handleWidth = () => {
@@ -35,13 +35,6 @@ function FrontPage() {
               : `polygon(100% 0, 100% 49%, 0 78%, 0 0)`,
         }}
       ></div>
-      {/* <div className="absolute top-0 right-0 w-full h-full">
-        <img
-          src={bg}
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
-      </div> */}
       <div className="flex flex-col width mx-auto width-padding ">
         {/* top part  */}
         <div className=" flex flex-1 flex-col justify-center  text-center md:text-left  items-center mt-32">
@@ -55,17 +48,16 @@ function FrontPage() {
                   fontWeight: 700,
                 }}
               >
-                A crypto wallet & gateway to blockchain apps
+                {header}
               </div>
-              <div className="mt-2 text-gray-700 dark:text-gray-400">
-                Start exploring blockchain applications in seconds. Trusted by
-                over 1 million users worldwide.
-              </div>
-              <div>
-                <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
-                  Start Now
-                </button>
-              </div>
+              <div className="mt-2 text-gray-700 dark:text-gray-400">{des}</div>
+              {start && (
+                <div>
+                  <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
+                    Start Now
+                  </button>
+                </div>
+              )}
             </div>
             <div className="flex-1 mt-10 md:mt-0 z-40">
               <img src={front} alt="" className="mx-auto" />
@@ -74,7 +66,7 @@ function FrontPage() {
           {/* learn more  */}
           <Link
             activeClass="active"
-            to="scroll"
+            to={scroll}
             spy={true}
             className="justify-center flex flex-col cursor-pointer mt-10 group z-40"
           >

@@ -26,14 +26,12 @@ function Navbar({ loggedIn, role }) {
       subLists: ["Support-1", "Support-2"],
     },
     {
-      name: "About",
-      path: "/about",
-      subLists: ["About-1", "About-2"],
+      name: "About Us",
+      path: "/about-us",
     },
     {
-      name: "Build",
-      path: "/build",
-      subLists: ["Build-1", "Build-2"],
+      name: "Careers",
+      path: "/careers",
     },
   ];
   // toggle in mobile
@@ -155,41 +153,43 @@ function Navbar({ loggedIn, role }) {
             {/* content  */}
             {width > 1023 && (
               <div className="flex space-x-7 items-center text-gray-800 dark:text-gray-200">
-                {contents.map((content, index) => {
-                  const { name, path, subLists } = content;
-                  return (
-                    <div key={index} className="relative">
-                      <Link
-                        to={path}
-                        className={`animation flex  py-9  space-x-1  
+                {Array.isArray(contents) &&
+                  contents.map((content, index) => {
+                    const { name, path, subLists } = content;
+                    return (
+                      <div key={index} className="relative">
+                        <Link
+                          to={path}
+                          className={`animation flex  py-9  space-x-1  
                       ${position ? "hover:text-intelzy" : " hover:text-white"}`}
-                        onClick={() => {
-                          scrollToTop();
-                        }}
-                        onMouseEnter={() => setShowIndex(index)}
-                      >
-                        <div> {name}</div>
-                        <div>
-                          <KeyboardArrowDownOutlinedIcon />
-                        </div>
-                      </Link>
-                      {showIndex === index && (
-                        <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-16 w-32 flex flex-col rounded-lg">
-                          {subLists.map((sub, index) => {
-                            return (
-                              <div
-                                className={`p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy dark:text-gray-700 dark:hover:text-intelzy`}
-                                key={index}
-                              >
-                                {sub}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                          onClick={() => {
+                            scrollToTop();
+                          }}
+                          onMouseEnter={() => setShowIndex(index)}
+                        >
+                          <div> {name}</div>
+                          <div>
+                            {subLists && <KeyboardArrowDownOutlinedIcon />}
+                          </div>
+                        </Link>
+                        {subLists && showIndex === index && (
+                          <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-16 w-32 flex flex-col rounded-lg">
+                            {Array.isArray(subLists) &&
+                              subLists.map((sub, index) => {
+                                return (
+                                  <div
+                                    className={`p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy dark:text-gray-700 dark:hover:text-intelzy`}
+                                    key={index}
+                                  >
+                                    {sub}
+                                  </div>
+                                );
+                              })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 <div>
                   <button className="text-white rounded-full py-2 px-6  bg-intelzy">
                     Career
@@ -234,45 +234,49 @@ function Navbar({ loggedIn, role }) {
                 >
                   <img src={darkmode ? logo2 : logo} alt="" />
                 </Link>
-                {contents.map((content, index) => {
-                  const { name, path, subLists } = content;
-                  return (
-                    <div key={index} className={`flex flex-col `}>
-                      <Link
-                        to={path}
-                        className="py-2 flex space-x-1  justify-center dark:text-gray-200"
-                        onClick={() => setShowIndex(index)}
-                      >
-                        <div>{name}</div>
-                        <div>
-                          <KeyboardArrowDownOutlinedIcon />
-                        </div>
-                      </Link>
-                      <div
-                        className={` animation space-y-1 overflow-hidden ${
-                          showIndex === index
-                            ? "max-height-drop bg-red-50 dark:bg-gray-700 dark:text-gray-300 rounded-md "
-                            : "max-h-0"
-                        }`}
-                      >
-                        {subLists.map((sub, index) => {
-                          return (
-                            <div
-                              className="py-2"
-                              key={index}
-                              onClick={() => {
-                                toggleMobileSidebar();
-                                scrollToTop();
-                              }}
-                            >
-                              {sub}
+                {Array.isArray(contents) &&
+                  contents.map((content, index) => {
+                    const { name, path, subLists } = content;
+                    return (
+                      <div key={index} className={`flex flex-col `}>
+                        <Link
+                          to={path}
+                          className="py-2 flex space-x-1  justify-center dark:text-gray-200"
+                          onClick={() => setShowIndex(index)}
+                        >
+                          <div>{name}</div>
+                          {subLists && (
+                            <div>
+                              <KeyboardArrowDownOutlinedIcon />
                             </div>
-                          );
-                        })}
+                          )}
+                        </Link>
+                        <div
+                          className={` animation space-y-1 overflow-hidden ${
+                            showIndex === index
+                              ? "max-height-drop bg-red-50 dark:bg-gray-700 dark:text-gray-300 rounded-md "
+                              : "max-h-0"
+                          }`}
+                        >
+                          {Array.isArray(subLists) &&
+                            subLists.map((sub, index) => {
+                              return (
+                                <div
+                                  className="py-2"
+                                  key={index}
+                                  onClick={() => {
+                                    toggleMobileSidebar();
+                                    scrollToTop();
+                                  }}
+                                >
+                                  {sub}
+                                </div>
+                              );
+                            })}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </div>
             </div>
           </>
