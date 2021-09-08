@@ -7,7 +7,7 @@ function CareerCard({ title, category, des, id }) {
       <span className="text-xl font-semibold text-gray-600 tracking-wide dark:text-gray-200">
         {title}
       </span>
-      <span className="text-sm font-sans mt-3 dark:text-gray-300">
+      <span className="text-sm font-font-lato mt-3 dark:text-gray-300">
         {category}
       </span>
       <p className="text-gray-600 flex-1 mt-3 dark:text-gray-300">{des}</p>

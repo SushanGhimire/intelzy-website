@@ -191,9 +191,7 @@ function Navbar({ loggedIn, role }) {
                     );
                   })}
                 <div>
-                  <button className="text-white rounded-full py-2 px-6  bg-intelzy">
-                    Career
-                  </button>
+                  <button className="button-style">Career</button>
                 </div>
               </div>
             )}

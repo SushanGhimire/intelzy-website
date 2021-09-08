@@ -1,13 +1,13 @@
 import React from "react";
 
-function Duties({ lists }) {
+function Listing({ lists }) {
   return (
-    <ul className="space-y-2 list-disc ml-10 mt-4">
+    <ul className="space-y-2 list-disc ml-5 mt-2 font-lato">
       {lists.map((l, index) => {
         return (
           <li
             key={index}
-            className="text-gray-800 font-sans dark:text-gray-400"
+            className="text-gray-800 font-font-lato dark:text-gray-400"
           >
             {l}
           </li>
@@ -17,4 +17,4 @@ function Duties({ lists }) {
   );
 }
 
-export default Duties;
+export default Listing;

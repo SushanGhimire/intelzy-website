@@ -1,7 +1,8 @@
 import React from "react";
 import FrontPage from "../common/FrontPage";
-import Duties from "./Duties";
-import Position from "./Position";
+import Listing from "./Listing";
+import RecentJobs from "./RecentJobs";
+import TitleSubCat from "./TitleSubCat";
 
 function CareerResult() {
   const dutiesLists = [
@@ -28,65 +29,58 @@ function CareerResult() {
         scroll="position"
       />
       <div
-        className="flex flex-col w-full width  width-padding mx-auto"
+        className="md:flex w-full width  width-padding mx-auto md:space-x-4 my-10"
         id="position"
       >
-        {/* about the position  */}
-        <div className="flex flex-col">
-          <div className="text-3xl dark:text-gray-200">About the position</div>
-          <Position />
-        </div>
-        {/* job desc  */}
-        <div className="flex flex-col mt-7">
-          <div className="text-3xl mb-2 dark:text-gray-200  ">
-            Job Description
-          </div>
-          <span className="text-gray-800 font-sans dark:text-gray-400 ">
-            We are looking for a young and dynamic individual for the position
-            of Marketing Lead. The Marketing Lead will be responsible for
-            designing a target-based marketing strategy, leading its executing,
-            monitoring and reporting it, for ReconwithMe, a SAAS product for
-            website security.
-          </span>
-        </div>
-        {/* Duties  */}
-        <div className="flex flex-col mt-7">
-          <div className="text-3xl mb-2 dark:text-gray-200">
-            Duties and Responsibilities
-          </div>
-          <span className="text-gray-800 font-sans mb-3 dark:text-gray-400">
-            Designing and implementing target-based marketing strategy for
-            Reconwithme, a SAAS product for website security that includes -
-          </span>
-          <Duties lists={dutiesLists} />
-        </div>
-        {/* Requirements  */}
-        <div className="flex flex-col mt-7">
-          <div className="text-3xl mb-2 dark:text-gray-200">Requirements</div>
-          <Duties lists={positionList} />
-        </div>
-        {/* About  */}
-        <div className="flex flex-col mt-7">
-          <div className="text-3xl mb-2 dark:text-gray-200">About Intelzy</div>
-          <span className="text-gray-800 font-sans mb-2 dark:text-gray-400">
-            Intelzy is a solution for website security and an early stage
-            startup in the cybersecurity industry. One can use ReconwithMe to
-            know your website's security status, find weaknesses, manage bugs
-            and fix them. We’re looking for highly talented and ambitious
-            individuals to grow our team and the product.
-          </span>
-          <span>
-            <strong className="dark:text-gray-200">Work Location </strong>
-            <span className="text-gray-800 font-sans dark:text-gray-400">
-              - Saptagandaki Chock, Chitwan, Above Ujeli creation
+        {/* right side  */}
+        <div className="flex-1 flex-flex-col  md:border-r border-gray-200 dark:border-gray-600">
+          <TitleSubCat />
+          {/* main description  */}
+          <div className="flex flex-col font-lato mt-5 dark:text-gray-400">
+            <span>
+              Intelzy is looking for a Software Engineer who is motivated and
+              confident to work in the following stacks:
             </span>
-          </span>
-          <span className="text-gray-800 font-sans mt-16 mb-28 dark:text-gray-200">
-            Interested candidates can apply by sending their CVs at
-            <span className="text-intelzy underline ml-2">
-              info@reconwithme.com
+            <ul className="mt-3 mb-5">
+              <li>- Reactjs & NodeJs,</li>
+              <li>- SQL and NoSQL databases</li>
+              <li>- GraphQL</li>
+            </ul>
+            <span>
+              An ideal candidate is someone who has at least two years of
+              professional full-stack development experience.
             </span>
-          </span>
+          </div>
+          {/* qualification */}
+          <div className="flex flex-col mt-10">
+            <div className="text-lg font-medium dark:text-gray-200">
+              Technical Qualifications:
+            </div>
+            <Listing lists={dutiesLists} />
+          </div>
+          {/* company benifits  */}
+          <div className="flex flex-col mt-10">
+            <div className="text-lg font-medium dark:text-gray-200">
+              Company Benefits:
+            </div>
+            <Listing lists={positionList} />
+          </div>
+          {/* Apply */}
+          <div className="flex flex-col mt-10">
+            <div className="text-lg font-medium dark:text-gray-200">Apply:</div>
+            <span className="mt-5 font-lato dark:text-gray-400">
+              Interested candidates fulfilling the criteria mentioned above are
+              highly encouraged to send a cover letter with their updated resume
+              at <strong> jobs@intelzy.com.np</strong>
+            </span>
+          </div>
+          <div className="mt-10">
+            <button className="button-style">Apply For Job</button>
+          </div>
+        </div>
+        {/* left side  */}
+        <div className="w-72 flex flex-col mt-20 md:mt-0">
+          <RecentJobs />
         </div>
       </div>
     </div>
