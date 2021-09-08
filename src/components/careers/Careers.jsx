@@ -49,7 +49,7 @@ function Careers() {
         scroll="careers"
       />
       <div
-        className="flex flex-col w-full width  width-padding mx-auto"
+        className="flex flex-col w-full width  width-padding mx-auto my-10"
         id="careers"
       >
         <div className="text-2xl font-semibold dark:text-gray-200">

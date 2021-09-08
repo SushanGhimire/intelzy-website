@@ -17,13 +17,19 @@ function Navbar({ loggedIn, role }) {
   const contents = [
     {
       name: "Features",
-      path: "/features",
-      subLists: ["Feature-1", "Feature-2"],
+      path: "",
+      subLists: [
+        { name: "Feature-1", path: "/features-1" },
+        { name: "Feature-2", path: "/features-2" },
+      ],
     },
     {
       name: "Support",
-      path: "/support",
-      subLists: ["Support-1", "Support-2"],
+      path: "",
+      subLists: [
+        { name: "Support-1", path: "/Support-1" },
+        { name: "Support-2", path: "/Support-2" },
+      ],
     },
     {
       name: "About Us",
@@ -237,18 +243,28 @@ function Navbar({ loggedIn, role }) {
                     const { name, path, subLists } = content;
                     return (
                       <div key={index} className={`flex flex-col `}>
-                        <Link
-                          to={path}
-                          className="py-2 flex space-x-1  justify-center dark:text-gray-200"
-                          onClick={() => setShowIndex(index)}
-                        >
-                          <div>{name}</div>
-                          {subLists && (
+                        {subLists ? (
+                          <div
+                            className="py-2 flex space-x-1  justify-center dark:text-gray-200"
+                            onClick={() => setShowIndex(index)}
+                          >
+                            <div>{name}</div>
                             <div>
                               <KeyboardArrowDownOutlinedIcon />
                             </div>
-                          )}
-                        </Link>
+                          </div>
+                        ) : (
+                          <Link
+                            to={path}
+                            className="py-2 flex space-x-1  justify-center dark:text-gray-200"
+                            onClick={() => {
+                              toggleMobileSidebar();
+                              scrollToTop();
+                            }}
+                          >
+                            <div>{name}</div>
+                          </Link>
+                        )}
                         <div
                           className={` animation space-y-1 overflow-hidden ${
                             showIndex === index
@@ -259,7 +275,8 @@ function Navbar({ loggedIn, role }) {
                           {Array.isArray(subLists) &&
                             subLists.map((sub, index) => {
                               return (
-                                <div
+                                <Link
+                                  to={sub.path}
                                   className="py-2"
                                   key={index}
                                   onClick={() => {
@@ -267,8 +284,8 @@ function Navbar({ loggedIn, role }) {
                                     scrollToTop();
                                   }}
                                 >
-                                  {sub}
-                                </div>
+                                  {sub.name}
+                                </Link>
                               );
                             })}
                         </div>
