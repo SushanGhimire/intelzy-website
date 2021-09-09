@@ -22,14 +22,14 @@ function CareerResult() {
     "Educational Qualification - Should have passed high school at least.",
   ];
   return (
-    <div className="flex flex-col mt-32">
+    <div className="flex flex-col ">
       {/* <FrontPage
         header="A gate way to your career"
         des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
         scroll="position"
       /> */}
       <div
-        className="md:flex w-full width  width-padding mx-auto md:space-x-4 my-10"
+        className="md:flex w-full width  width-padding mx-auto md:space-x-4 mb-10 mt-32"
         id="position"
       >
         {/* right side  */}

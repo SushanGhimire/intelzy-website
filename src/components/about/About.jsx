@@ -1,18 +1,17 @@
 import React from "react";
-import FrontPage from "../common/FrontPage";
-
+import AboutCard from "./AboutCard";
+import OurTeam from "./OurTeam";
 function About() {
   return (
     <div className="flex flex-col">
-      <FrontPage
-        header="A gate way to know about us"
-        des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
-        scroll="about-us"
-      />
       <div
-        className="flex flex-col w-full width  width-padding mx-auto"
+        className="flex flex-col w-full width  width-padding mx-auto  mt-32"
         id="about-us"
-      ></div>
+      >
+        {/* about card  */}
+        <AboutCard />
+        <OurTeam />
+      </div>
     </div>
   );
 }

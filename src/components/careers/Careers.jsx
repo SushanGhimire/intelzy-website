@@ -42,14 +42,14 @@ function Careers() {
     },
   ];
   return (
-    <div className="flex flex-col mt-32">
+    <div className="flex flex-col ">
       {/* <FrontPage
         header="A gate way to your career"
         des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
         scroll="careers"
       /> */}
       <div
-        className="flex flex-col w-full width  width-padding mx-auto my-10"
+        className="flex flex-col w-full width  width-padding mx-auto mb-10 mt-32"
         id="careers"
       >
         <div className="text-2xl font-semibold dark:text-gray-200">

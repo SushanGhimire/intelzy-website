@@ -71,11 +71,11 @@ function Navbar({ loggedIn, role }) {
     };
   });
   return (
-    <div className={`${darkmode === true ? "dark" : ""}`}>
+    <div className={``}>
       <div
         className={`w-full fixed top-0 right-0 z-50 width-padding ${
           position ? "bg-white dark:bg-gray-900" : ""
-        } ${darkmode ? "border-b border-gray-800 dark" : ""}`}
+        } ${darkmode ? "border-b dark:bg-gray-900 border-gray-800 dark" : ""}`}
       >
         <div className="absolute top-9 sm:top-12 lg:top-9 right-32 lg:right-6">
           <div
