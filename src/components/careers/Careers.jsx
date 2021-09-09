@@ -1,5 +1,5 @@
 import React from "react";
-import FrontPage from "../common/FrontPage";
+// import FrontPage from "../common/FrontPage";
 import CareerCard from "./CareerCard";
 
 function Careers() {
@@ -42,12 +42,12 @@ function Careers() {
     },
   ];
   return (
-    <div className="flex flex-col">
-      <FrontPage
+    <div className="flex flex-col mt-32">
+      {/* <FrontPage
         header="A gate way to your career"
         des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
         scroll="careers"
-      />
+      /> */}
       <div
         className="flex flex-col w-full width  width-padding mx-auto my-10"
         id="careers"

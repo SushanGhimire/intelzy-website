@@ -3,41 +3,29 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/images/intelzyLogo.png";
 import logo2 from "../../assets/images/intelzyLogo2.png";
-import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
+// import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../redux/actions/action";
 function Navbar({ loggedIn, role }) {
   const dispatch = useDispatch();
+  let nav = window.location.pathname.split("/")[1];
   const [width, setWidth] = useState(window.innerWidth);
   const [position, setPosition] = useState(0);
   const mobileSidebar = useRef();
   const coverAll = useRef();
   const darkmode = useSelector((state) => state.darkmode.darkmode);
-  const [showIndex, setShowIndex] = useState("");
   const contents = [
     {
-      name: "Features",
-      path: "",
-      subLists: [
-        { name: "Feature-1", path: "/features-1" },
-        { name: "Feature-2", path: "/features-2" },
-      ],
-    },
-    {
-      name: "Support",
-      path: "",
-      subLists: [
-        { name: "Support-1", path: "/Support-1" },
-        { name: "Support-2", path: "/Support-2" },
-      ],
-    },
-    {
-      name: "About Us",
+      name: "About",
       path: "/about-us",
     },
     {
-      name: "Careers",
-      path: "/careers",
+      name: "Features",
+      path: "features",
+    },
+    {
+      name: "Support",
+      path: "supports",
     },
   ];
   // toggle in mobile
@@ -52,7 +40,6 @@ function Navbar({ loggedIn, role }) {
       coverall.style.display = "block";
     }
   };
-
   // if user is using screen width of laptop and changes to lower than 1023px width, call the function
   // if user is using screen width of ipad or mobile and changes to higher than 1024px width, call the function
   const handleWidth = () => {
@@ -89,7 +76,6 @@ function Navbar({ loggedIn, role }) {
         className={`w-full fixed top-0 right-0 z-50 width-padding ${
           position ? "bg-white dark:bg-gray-900" : ""
         } ${darkmode ? "border-b border-gray-800 dark" : ""}`}
-        onMouseLeave={() => setShowIndex("0")}
       >
         <div className="absolute top-9 sm:top-12 lg:top-9 right-32 lg:right-6">
           <div
@@ -161,43 +147,28 @@ function Navbar({ loggedIn, role }) {
               <div className="flex space-x-7 items-center text-gray-800 dark:text-gray-200">
                 {Array.isArray(contents) &&
                   contents.map((content, index) => {
-                    const { name, path, subLists } = content;
+                    const { name, path } = content;
                     return (
                       <div key={index} className="relative">
                         <Link
                           to={path}
                           className={`animation flex  py-9  space-x-1  
-                      ${position ? "hover:text-intelzy" : " hover:text-white"}`}
+                      ${position && "hover:text-intelzy"} ${
+                            nav ? "hover:text-intelzy" : "hover:text-white"
+                          }`}
                           onClick={() => {
                             scrollToTop();
                           }}
-                          onMouseEnter={() => setShowIndex(index)}
                         >
                           <div> {name}</div>
-                          <div>
-                            {subLists && <KeyboardArrowDownOutlinedIcon />}
-                          </div>
                         </Link>
-                        {subLists && showIndex === index && (
-                          <div className="bg-white space-y-1 box-shadow p-1 absolute -right-4 top-16 w-32 flex flex-col rounded-lg">
-                            {Array.isArray(subLists) &&
-                              subLists.map((sub, index) => {
-                                return (
-                                  <div
-                                    className={`p-2 cursor-pointer rounded-md hover:bg-red-50 hover:text-intelzy dark:text-gray-700 dark:hover:text-intelzy`}
-                                    key={index}
-                                  >
-                                    {sub}
-                                  </div>
-                                );
-                              })}
-                          </div>
-                        )}
                       </div>
                     );
                   })}
                 <div>
-                  <button className="button-style">Career</button>
+                  <Link to="/careers" className="button-style">
+                    Career
+                  </Link>
                 </div>
               </div>
             )}
@@ -238,60 +209,38 @@ function Navbar({ loggedIn, role }) {
                 >
                   <img src={darkmode ? logo2 : logo} alt="" />
                 </Link>
-                {Array.isArray(contents) &&
-                  contents.map((content, index) => {
-                    const { name, path, subLists } = content;
-                    return (
-                      <div key={index} className={`flex flex-col `}>
-                        {subLists ? (
-                          <div
-                            className="py-2 flex space-x-1  justify-center dark:text-gray-200"
-                            onClick={() => setShowIndex(index)}
-                          >
-                            <div>{name}</div>
-                            <div>
-                              <KeyboardArrowDownOutlinedIcon />
-                            </div>
-                          </div>
-                        ) : (
+                <div className="flex flex-col space-y-3">
+                  {Array.isArray(contents) &&
+                    contents.map((content, index) => {
+                      const { name, path } = content;
+                      return (
+                        <div key={index} className="relative">
                           <Link
                             to={path}
-                            className="py-2 flex space-x-1  justify-center dark:text-gray-200"
+                            className={`text-center`}
                             onClick={() => {
                               toggleMobileSidebar();
                               scrollToTop();
                             }}
                           >
-                            <div>{name}</div>
+                            <div> {name}</div>
                           </Link>
-                        )}
-                        <div
-                          className={` animation space-y-1 overflow-hidden ${
-                            showIndex === index
-                              ? "max-height-drop bg-red-50 dark:bg-gray-700 dark:text-gray-300 rounded-md "
-                              : "max-h-0"
-                          }`}
-                        >
-                          {Array.isArray(subLists) &&
-                            subLists.map((sub, index) => {
-                              return (
-                                <Link
-                                  to={sub.path}
-                                  className="py-2"
-                                  key={index}
-                                  onClick={() => {
-                                    toggleMobileSidebar();
-                                    scrollToTop();
-                                  }}
-                                >
-                                  {sub.name}
-                                </Link>
-                              );
-                            })}
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                </div>
+                <div className="mt-5">
+                  <Link
+                    to="/careers"
+                    onClick={() => {
+                      toggleMobileSidebar();
+                      scrollToTop();
+                    }}
+                    className="button-style"
+                  >
+                    Career
+                  </Link>
+                </div>
               </div>
             </div>
           </>

@@ -1,5 +1,5 @@
 import React from "react";
-import FrontPage from "../common/FrontPage";
+// import FrontPage from "../common/FrontPage";
 import Listing from "./Listing";
 import RecentJobs from "./RecentJobs";
 import TitleSubCat from "./TitleSubCat";
@@ -22,12 +22,12 @@ function CareerResult() {
     "Educational Qualification - Should have passed high school at least.",
   ];
   return (
-    <div className="flex flex-col">
-      <FrontPage
+    <div className="flex flex-col mt-32">
+      {/* <FrontPage
         header="A gate way to your career"
         des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
         scroll="position"
-      />
+      /> */}
       <div
         className="md:flex w-full width  width-padding mx-auto md:space-x-4 my-10"
         id="position"
@@ -75,7 +75,9 @@ function CareerResult() {
             </span>
           </div>
           <div className="mt-10">
-            <button className="button-style">Apply For Job</button>
+            <a href="mailto:jobs@intelzy.com.np">
+              <button className="button-style">Apply For Job</button>
+            </a>
           </div>
         </div>
         {/* left side  */}
