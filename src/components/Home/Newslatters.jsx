@@ -11,7 +11,7 @@ function Newslatters() {
       </div>
       <div className="mx-auto ">
         <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
-          Start Now
+          input box here Subscribe Now
         </button>
       </div>
     </div>

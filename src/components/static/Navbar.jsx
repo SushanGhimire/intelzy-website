@@ -20,12 +20,12 @@ function Navbar({ loggedIn, role }) {
       path: "/about-us",
     },
     {
-      name: "Features",
-      path: "features",
+      name: "Blogs",
+      path: "/blogs",
     },
     {
-      name: "Support",
-      path: "supports",
+      name: "Contact",
+      path: "/contact-us",
     },
   ];
   // toggle in mobile
@@ -166,7 +166,13 @@ function Navbar({ loggedIn, role }) {
                     );
                   })}
                 <div>
-                  <Link to="/careers" className="button-style">
+                  <Link
+                    to="/careers"
+                    className="button-style"
+                    onClick={() => {
+                      scrollToTop();
+                    }}
+                  >
                     Career
                   </Link>
                 </div>

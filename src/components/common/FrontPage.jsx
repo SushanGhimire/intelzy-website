@@ -50,7 +50,9 @@ function FrontPage({ header, des, start, scroll }) {
               >
                 {header}
               </div>
-              <div className="mt-2 text-gray-700 dark:text-gray-400">{des}</div>
+              <div className="mt-2 text-gray-700 dark:text-gray-400 font-lato text-lg font-semibold">
+                {des}
+              </div>
               {start && (
                 <div>
                   <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
