@@ -6,8 +6,8 @@ import store from "./store";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/css/tailwind.css";
 import "./assets/css/style.css";
+import "./assets/css/slider.css";
 import App from "./App";
-
 store.subscribe(() => store.getState());
 ReactDOM.render(
   <React.StrictMode>
