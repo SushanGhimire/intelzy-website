@@ -19,38 +19,27 @@ function PartnerSlider() {
   const logos = [p1, p2, p3, p4, p5, p6, p7, p8];
   return (
     <Swiper
+      slidesPerView={1}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
       }}
       loop={true}
-      //   spaceBetween={10}
       className="mySwiper"
       breakpoints={{
-        // when window width is >= 640px
         640: {
-          width: 640,
           slidesPerView: 2,
+          spaceBetween: 20,
         },
-        // when window width is >= 768px
         768: {
-          width: 768,
           slidesPerView: 4,
+          spaceBetween: 40,
         },
         1024: {
-          width: 1024,
           slidesPerView: 5,
-        },
-        1200: {
-          width: 1200,
-          slidesPerView: 5,
-        },
-        1440: {
-          width: 1400,
-          slidesPerView: 6,
+          spaceBetween: 50,
         },
       }}
-      //   slidesPerView={9}
     >
       {logos.map((logo, index) => {
         return (
