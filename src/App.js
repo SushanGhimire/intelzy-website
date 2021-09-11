@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Careers from "./components/careers/Careers";
 import About from "./components/about/About";
 import CareerResult from "./components/careers/CareerResult";
+import ContactUs from "./components/contact/ContactUs";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/careers" component={Careers} />
           <Route exact path="/about-us" component={About} />
+          <Route exact path="/contact-us" component={ContactUs} />
           <Route exact path="/careers/:id/:title" component={CareerResult} />
         </Switch>
         <Footer />

@@ -45,7 +45,11 @@ function PartnerSlider() {
         return (
           <SwiperSlide className="" key={index}>
             <div className="" key={index}>
-              <img src={logo} className="mx-auto w-32 object-cover" alt="" />
+              <img
+                src={logo}
+                className="mx-auto w-32 object-cover dark:bg-gray-900 "
+                alt=""
+              />
             </div>
           </SwiperSlide>
         );
