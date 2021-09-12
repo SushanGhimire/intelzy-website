@@ -28,6 +28,7 @@ function ContactUs() {
           </div>
           {/* right side  */}
           <div className="w-72 flex flex-col mt-16 sm:mt-0">
+
             <div className="font-popping text-xl font-medium dark:text-gray-200">
               Connect with Us
             </div>
