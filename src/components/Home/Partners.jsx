@@ -12,7 +12,7 @@ function Partners() {
         traders, crypto gamers, and developers. Over a million downloads and
         counting!
       </div>
-      <div className="w-full   overflow-hidden width mx-auto">
+      <div className="w-full   overflow-hidden width mx-auto mt-10">
         <PartnerSlider />
       </div>
     </div>
