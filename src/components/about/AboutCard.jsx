@@ -15,22 +15,22 @@ function AboutCard() {
         >
           Who are we ?
         </div>
-        <div className="mt-5 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
-          Intelzy is a Nepal-based tech startup company established with a
-          motive of effortlessly providing digital strategy, growth strategy,
-          design and development services to both the private and public sector.
+
+        <div className="mt-2 text-gray-700 dark:text-gray-400">
+        Intelzy is a Nepal based tech startup company established with a motive of effortlessly
+        providing digital strategy, growth strategy,
+        design and development services to both the private and public sector.
+
         </div>
-        <div className="mt-2 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
-          We are a team of developers with experience & singular focus. We
-          specialize in helping clients build innovative and customer-facing
-          products at scale. We have a proven track record for turning ideas
-          into commercially successful products.
+        <div className="mt-2 text-gray-700 dark:text-gray-400">
+        We are a team of developers with experience & singular focus. We specialize in helping clients 
+        build innovative and customer-facing products at scale.
+        We have a proven track record for turning ideas into commercially successful products.
         </div>
-        <div className="mt-2 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
-          You can trust in our experience & knowledge of business applications,
-          enterprise-grade software & application development .We believe in
-          turning ideas into commercially successful products that millions of
-          people love to use.
+        <div className="mt-2 text-gray-700 dark:text-gray-400">
+        You can trust in our experience & knowledge of business applications, enterprise-grade software & application development. 
+        We believe in turning ideas into commercially successful products that millions of people love to use.
+
         </div>
       </div>
       <div className="flex-1 mt-10 md:mt-0 z-40">

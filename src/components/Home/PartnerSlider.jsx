@@ -80,7 +80,7 @@ function PartnerSlider() {
             <a href={logo.link} target="new tab " className="" key={index}>
               <img
                 src={logo.img}
-                className="mx-auto dark:bg-gray-900 h-24"
+                className="mx-auto dark:bg-gray-900 h-16"
                 alt=""
               />
             </a>

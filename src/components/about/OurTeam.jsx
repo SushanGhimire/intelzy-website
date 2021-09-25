@@ -96,7 +96,10 @@ function OurTeam() {
   return (
     <div className="flex flex-col my-20">
       <div className=" font-black text-gray-800 dark:text-gray-200 text-4xl text-center">
-        Our Team
+         Meet the Team
+      </div>     
+      <div className="text-center text-gray-700 mt-2 dark:text-gray-400 width mx-auto ">
+       With over 100 of years of combined experience, we've got a well-seasoned team at the helm.    
       </div>
       {/* grid  */}
       <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-10 mt-10">

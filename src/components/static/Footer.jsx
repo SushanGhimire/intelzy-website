@@ -5,35 +5,34 @@ import { useSelector } from "react-redux";
 function Footer() {
   const footerContent = [
     {
-      title: "learn more",
+      title: "Services",
       lists: [
-        "About",
-        "Developers",
-        "Download",
-        "Documentation",
-        "Intelzy Institutional",
+        "Artificial Intelligence",
+        "Blockchain",
+        "Web Development",
+        "App Development",
+        "Quality Assurance",
       ],
     },
     {
-      title: "Get involved",
+      title: "Company",
       lists: [
-        "GitHub",
-        "Gitcoin",
-        "Open Position",
-        "Swag Shop",
-        "Press & Partnership",
+        "About",
+        "Blogs",
+        "Contact",
+        "Careers",
       ],
     },
     {
       title: "Connect",
-      lists: ["FAQs", "Support", "Blog", "Twitter", "INtelzy Institutional"],
+      lists: ["FAQs", "Support", "Blogs", "Contact"],
     },
     {
       title: "Legal",
       lists: [
-        "Privacy Policy",
         "Terms of Use",
-        "Contributor License Agreement",
+        "Privacy Policy",
+       
       ],
     },
   ];
