@@ -24,6 +24,10 @@ function Navbar({ loggedIn, role }) {
       path: "/blogs",
     },
     {
+      name: "Services",
+      path: "/services",
+    },
+    {
       name: "Contact",
       path: "/contact-us",
     },

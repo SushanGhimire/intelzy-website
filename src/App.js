@@ -8,6 +8,7 @@ import Careers from "./components/careers/Careers";
 import About from "./components/about/About";
 import CareerResult from "./components/careers/CareerResult";
 import ContactUs from "./components/contact/ContactUs";
+import Services from "./components/services/Services";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/careers" component={Careers} />
+          <Route exact path="/services" component={Services} />
           <Route exact path="/about-us" component={About} />
           <Route exact path="/contact-us" component={ContactUs} />
           <Route exact path="/careers/:id/:title" component={CareerResult} />

@@ -3,7 +3,7 @@ import front from "../../assets/images/frontpageimg.png";
 
 function AboutCard() {
   return (
-    <div className="md:flex items-center">
+    <div className="md:flex items-center md:space-x-10">
       <div className="flex-1 relative py-7">
         <div
           className=" font-black text-gray-800 dark:text-gray-200"
@@ -13,20 +13,24 @@ function AboutCard() {
             fontWeight: 700,
           }}
         >
-          About
+          Who are we ?
         </div>
-        <div className="mt-2 text-gray-700 dark:text-gray-400">
-          MetaMask is a global community of developers and designers dedicated
-          to making the world a better place with blockchain technology. Our
-          mission is to democratize access to the decentralized web, and through
-          this mission, to transform the internet and world economy to one that
-          empowers individuals through interactions based on consent, privacy,
-          and free association.
+        <div className="mt-5 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
+          Intelzy is a Nepal-based tech startup company established with a
+          motive of effortlessly providing digital strategy, growth strategy,
+          design and development services to both the private and public sector.
         </div>
-        <div className="mt-2 text-gray-700 dark:text-gray-400">
-          We join our amazingly talented colleagues in the wider ConsenSys
-          product family in working to deliver a more fair, free and
-          decentralized internet-based economy for all.
+        <div className="mt-2 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
+          We are a team of developers with experience & singular focus. We
+          specialize in helping clients build innovative and customer-facing
+          products at scale. We have a proven track record for turning ideas
+          into commercially successful products.
+        </div>
+        <div className="mt-2 text-gray-700 dark:text-gray-400 text-justify text-sm md:text-base">
+          You can trust in our experience & knowledge of business applications,
+          enterprise-grade software & application development .We believe in
+          turning ideas into commercially successful products that millions of
+          people love to use.
         </div>
       </div>
       <div className="flex-1 mt-10 md:mt-0 z-40">
