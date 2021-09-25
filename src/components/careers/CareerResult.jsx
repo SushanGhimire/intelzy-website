@@ -71,7 +71,7 @@ function CareerResult() {
             <span className="mt-5 font-lato dark:text-gray-400">
               Interested candidates fulfilling the criteria mentioned above are
               highly encouraged to send a cover letter with their updated resume
-              at <strong> jobs@intelzy.com.np</strong>
+              at <strong> jobs@intelzy.co</strong>
             </span>
           </div>
           <div className="mt-10">

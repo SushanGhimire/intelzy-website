@@ -52,8 +52,8 @@ function Careers() {
         className="flex flex-col w-full width  width-padding mx-auto mb-10 mt-32"
         id="careers"
       >
-        <div className="text-2xl font-semibold dark:text-gray-200">
-          Available Positions
+        <div className="text-2xl  text-center font-bold dark:text-gray-200">
+          Open positions
         </div>
         {/* grid card  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-10">
@@ -61,6 +61,19 @@ function Careers() {
             return <CareerCard key={index} {...career} />;
           })}
         </div>
+        <div className="text-2xl text-center font-bold dark:text-gray-200">
+          Internships
+        </div>
+        <div className="flex text-center  space-x-1 text-gray-600 mt-0.5">
+        We love watching talented people learn and explore their skills.
+        Our interns gain real work experience by pairing up with our developers on real projects. 
+        </div>
+        <div className="mt-10 text-center">
+            <a href="mailto:jobs@intelzy.com.np">
+              <button className="button-style">Apply For Internship</button>
+            </a>
+        </div>
+        
       </div>
     </div>
   );

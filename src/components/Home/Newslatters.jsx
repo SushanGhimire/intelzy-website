@@ -7,7 +7,7 @@ function Newslatters() {
         Receive our Newsletter
       </div>
       <div className="text-gray-700 mx-auto text-center mt-2 dark:text-gray-400">
-        Sign up to receive updates and announcements
+        Get updates, company news, and more.
       </div>
       <div className="hidden lg:flex mx-auto  space-x-4 items-center mt-5 border border-gray-300 rounded-full relative">
         <div>
@@ -17,9 +17,14 @@ function Newslatters() {
           />
         </div>
         <button className="text-white rounded-full py-3 px-6  bg-intelzy absolute right-0">
-          Subscribe Now
+          Subscribe
         </button>
+        
       </div>
+      <div className="text-xs font-light text-gray-400 mx-auto text-center mt-2 dark:text-gray-50">
+        Your data is secure. We won’t send spam or sell it to third parties.
+      </div>
+      
     </div>
   );
 }

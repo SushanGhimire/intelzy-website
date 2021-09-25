@@ -21,7 +21,7 @@ function Navbar({ loggedIn, role }) {
     },
     {
       name: "Blogs",
-      path: "/blogs",
+      path: "",
     },
     {
       name: "Services",
@@ -154,7 +154,18 @@ function Navbar({ loggedIn, role }) {
                     const { name, path } = content;
                     return (
                       <div key={index} className="relative">
-                        <Link
+                        {path === "" ? (<a href="https://medium.com/@intelzy"
+                        target="new tab"
+                          className={`animation flex  py-9  space-x-1  
+                      ${position && "hover:text-intelzy"} ${
+                            nav ? "hover:text-intelzy" : "hover:text-white"
+                          }`}
+                          onClick={() => {
+                            scrollToTop();
+                          }}
+                        >
+                          <div> {name}</div>
+                        </a>):(<Link
                           to={path}
                           className={`animation flex  py-9  space-x-1  
                       ${position && "hover:text-intelzy"} ${
@@ -165,7 +176,8 @@ function Navbar({ loggedIn, role }) {
                           }}
                         >
                           <div> {name}</div>
-                        </Link>
+                        </Link>)}
+                        
                       </div>
                     );
                   })}
