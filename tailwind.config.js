@@ -3,6 +3,15 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
       animation: {
         blob: "blob 6s infinite",
         "gradient-x": "gradient-x 7s ease infinite",

@@ -33,3 +33,9 @@
   .clip{
     clip-path: polygon(100% 0, 100% 49%, 0 78%, 0 0);
   }
+  .service-card-clip{
+    /* clip-path: circle(30.7% at 100% 0); */
+    clip-path: circle(20.2% at 100% 0);  }
+  .clip-full:hover .service-card-clip{
+    clip-path: circle(141.4% at 100% 0);
+  }
