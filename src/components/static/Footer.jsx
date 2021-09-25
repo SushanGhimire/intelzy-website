@@ -7,32 +7,36 @@ function Footer() {
     {
       title: "Services",
       lists: [
-        "Artificial Intelligence",
-        "Blockchain",
-        "Web Development",
-        "App Development",
-        "Quality Assurance",
+        { name: "Artificial Intelligence", link: "" },
+        { name: "Blockchain", link: "" },
+        { name: "Web Development", link: "" },
+        { name: "App Development", link: "" },
+        { name: "Quality Assurance", link: "" },
       ],
     },
     {
       title: "Company",
       lists: [
-        "About",
-        "Blogs",
-        "Contact",
-        "Careers",
+        { name: "About", link: "" },
+        { name: "Blogs", link: "" },
+        { name: "Contact", link: "" },
+        { name: "Careers", link: "" },
       ],
     },
     {
       title: "Connect",
-      lists: ["FAQs", "Support", "Blogs", "Contact"],
+      lists: [
+        { name: "FAQs", link: "" },
+        { name: "Support", link: "" },
+        { name: "Blogs", link: "" },
+        { name: "Contact", link: "" },
+      ],
     },
     {
       title: "Legal",
       lists: [
-        "Terms of Use",
-        "Privacy Policy",
-       
+        { name: "Terms of Use", link: "" },
+        { name: "Privacy Policy", link: "" },
       ],
     },
   ];
@@ -55,11 +59,20 @@ function Footer() {
                 <div className="text-lg uppercase text-intelzy tracking-wide">
                   {title}
                 </div>
-                <ul className="space-y-3 text-gray-700 md:text-xs 2xl:text-base mt-3 dark:text-gray-300">
+                <div className="space-y-3 text-gray-700 md:text-xs 2xl:text-base mt-3 dark:text-gray-300 flex flex-col">
                   {lists.map((list, index) => {
-                    return <li key={index}>{list}</li>;
+                    return (
+                      <a
+                        href={list.link}
+                        target="_blank"
+                        key={index}
+                        className="cursor-pointer"
+                      >
+                        {list.name}
+                      </a>
+                    );
                   })}
-                </ul>
+                </div>
               </div>
             );
           })}

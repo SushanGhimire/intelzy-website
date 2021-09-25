@@ -9,7 +9,7 @@ function ServiceCard2({ flex, title, des }) {
         className={`flex-1 hidden md:block rounded-xl  ${
           darkmode
             ? "border-6 border-gray-500"
-            : "p-1.5 bg-gradient-to-r from-black to-intelzy via-black"
+            : "p-1.5 bg-gradient-to-r from-gray-600 to-intelzy via-intelzy"
         } ${flex === "right" ? "md:opacity-0" : ""}
         `}
       >
@@ -31,7 +31,7 @@ function ServiceCard2({ flex, title, des }) {
         className={`rounded-full  p-1.5 ${
           darkmode
             ? "bg-gray-500"
-            : "bg-gradient-to-r from-black to-intelzy via-black"
+            : "bg-gradient-to-r from-gray-600 to-intelzy via-intelzy"
         }`}
       >
         <div className="h-5 w-5 rounded-full bg-white dark:bg-gray-900"></div>
@@ -49,7 +49,7 @@ function ServiceCard2({ flex, title, des }) {
         className={`flex-1  rounded-xl ${
           darkmode
             ? "border-6 border-gray-500"
-            : "p-1.5 bg-gradient-to-r from-black to-intelzy via-black"
+            : "p-1.5 bg-gradient-to-r from-gray-600 to-intelzy via-intelzy"
         }
         ${flex === "left" ? "md:opacity-0" : ""}
         `}
