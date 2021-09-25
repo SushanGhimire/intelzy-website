@@ -10,23 +10,23 @@ import Newslatters from "./Newslatters";
 function Home() {
   let flexCard = [
     {
-      content: "Buy, store, send and swap tokens",
+      content: "Pioneer in Blockchain, AI and Cybersecurity",
       flex: "flex-row",
-      des: "Available as a browser extension and as a mobile app, MetaMask equips you with a key vault, secure login, token wallet, and token exchange—everything you need to manage your digital assets.",
+      des: "By taking on the most recent innovation advancements we are pushing the limits of how technologies can help our clients by building core blockchain solutions to provide low latency and immutability to businesses by focusing on application specific blockchain architecture development along with security audit consultancy and complete audits to evaluate cyber-related risk in the network and putting mitigating controls in place to prevent systems from attacks.We tend to use machine learning algorithms and NLP for forecasting & prediction, data management and business automation. ",
       img: front2,
       aos: "fade-left",
     },
     {
-      content: "Explore blockchain apps",
+      content: "Innovative and scalable solutions",
       flex: "flex-row-reverse",
-      des: "MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. You are always in control when interacting on the new decentralized web.",
+      des: "First rate movement of a product with creative and versatile arrangements by the developers with correct use of tools that work faster, perform better brings out the excellent outcome.We tend to scale with today’s market graphs of innovation allowing to align technology strategy with new and emerging technological solutions. ",
       img: front,
       aos: "fade-right",
     },
     {
-      content: "Own your data",
+      content: "50+ employees with years of collaborative experience",
       flex: "flex-row",
-      des: "MetaMask generates passwords and keys on your device, so only you have access to your accounts and data. You always choose what to share and what to keep private.",
+      des: "",
       img: front3,
       aos: "fade-left",
     },
@@ -34,8 +34,8 @@ function Home() {
   return (
     <div className=" flex flex-col">
       <FrontPage
-        header="crypto wallet & gateway to blockchain apps"
-        des="Start exploring blockchain applications in seconds. Trusted by over 1 million users worldwide."
+        header="Something Special here"
+        des=""
         start="true"
         scroll="scroll"
       />

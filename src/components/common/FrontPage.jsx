@@ -54,10 +54,17 @@ function FrontPage({ header, des, start, scroll }) {
                 {des}
               </div>
               {start && (
-                <div>
+                <div>                  
+                  <Link
+                    activeClass="active"
+                    to={scroll}
+                    spy={true}
+                    className="justify-center  cursor-pointer mt-10 group z-40"
+                  >
                   <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
-                    Start Now
-                  </button>
+                  Start Now
+                  </button>                   
+                </Link>
                 </div>
               )}
             </div>
