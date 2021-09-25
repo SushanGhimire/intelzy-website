@@ -1,34 +1,63 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 function ServiceCard2({ flex, title, des }) {
+  const { darkmode } = useSelector((state) => state.darkmode);
   return (
-    <div className={`flex justify-between items-center `}>
+    <div className={`flex justify-between items-center mt-3`}>
+      {/* left card  */}
       <div
-        className={`flex-1 border-6 border-blue-400 dark:border-gray-700 rounded-xl p-4  ${
-          flex === "row" ? "" : "opacity-0"
-        } `}
+        className={`flex-1 hidden md:block rounded-xl  ${
+          darkmode
+            ? "border-6 border-gray-500"
+            : "p-1.5 bg-gradient-to-r from-black to-intelzy via-black"
+        } ${flex === "right" ? "md:opacity-0" : ""}
+        `}
       >
-        <div className="text-xl font-black dark:text-gray-200">{title}</div>
-        <p className="text-sm dark:text-gray-400">{des}</p>
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-3">
+          <div className="text-xl font-black dark:text-gray-200">{title}</div>
+          <p className="text-sm dark:text-gray-400">{des}</p>
+        </div>
       </div>
+      {/* left line  */}
       <div
-        className={`w-10 h-2 bg-blue-400 dark:bg-gray-700 ${
-          flex === "row" ? "" : "opacity-0"
-        }`}
+        className={`w-10 h-1.5 ${
+          darkmode
+            ? "bg-gray-500"
+            : "bg-gradient-to-r from-intelzy to-black via-intelzy"
+        } hidden md:block ${flex === "right" ? "md:opacity-0" : ""}`}
       ></div>
-      <div className="rounded-full p-3 ring-8 ring-blue-400 dark:ring-gray-700"></div>
+      {/* circle  */}
       <div
-        className={`w-10 h-2 bg-blue-400 dark:bg-gray-700 ${
-          flex === "rev" ? "" : "opacity-0"
+        className={`rounded-full  p-1.5 ${
+          darkmode
+            ? "bg-gray-500"
+            : "bg-gradient-to-r from-black to-intelzy via-black"
         }`}
-      ></div>
-      <div
-        className={`flex-1 border-6 border-blue-400 dark:border-gray-700 rounded-xl p-4  ${
-          flex === "rev" ? "" : "opacity-0"
-        } `}
       >
-        <div className="text-xl font-black dark:text-gray-200">{title}</div>
-        <p className="text-sm dark:text-gray-400">{des}</p>
+        <div className="h-5 w-5 rounded-full bg-white dark:bg-gray-900"></div>
+      </div>
+      {/* right line  */}
+      <div
+        className={`w-10 h-1.5 ${
+          darkmode
+            ? "bg-gray-500"
+            : "bg-gradient-to-r from-intelzy to-black via-intelzy"
+        }   ${flex === "left" ? "md:opacity-0" : ""}`}
+      ></div>
+      {/* right card  */}
+      <div
+        className={`flex-1  rounded-xl ${
+          darkmode
+            ? "border-6 border-gray-500"
+            : "p-1.5 bg-gradient-to-r from-black to-intelzy via-black"
+        }
+        ${flex === "left" ? "md:opacity-0" : ""}
+        `}
+      >
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-3">
+          <div className="text-xl font-black dark:text-gray-200">{title}</div>
+          <p className="text-sm dark:text-gray-400">{des}</p>
+        </div>
       </div>
     </div>
   );
