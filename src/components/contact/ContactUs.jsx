@@ -1,12 +1,12 @@
 import React from "react";
 import ContactFOrm from "./ContactFOrm";
 import Facebook from "../../assets/images/icons/Facebook.svg";
-import Google from "../../assets/images/icons/Google.svg";
+import github from "../../assets/images/icons/github.svg";
 import Linkedin from "../../assets/images/icons/Linkedin.svg";
 import Twitter from "../../assets/images/icons/Twitter.svg";
 
 import FacebookLight from "../../assets/images/icons/FacebookLight.svg";
-import GoogleLight from "../../assets/images/icons/GoogleLight.svg";
+import githubLight from "../../assets/images/icons/githubLight.svg";
 import LinkedinLight from "../../assets/images/icons/LinkedinLight.svg";
 import TwitterLight from "../../assets/images/icons/TwitterLight.svg";
 import { useSelector } from "react-redux";
@@ -28,39 +28,42 @@ function ContactUs() {
           </div>
           {/* right side  */}
           <div className="w-72 flex flex-col mt-16 sm:mt-0">
+            {/* social sites  */}
+            <div className="flex space-x-4 items-center border rounded-md border-gray-300 p-4 dark:border-gray-500">
+              <div className="font-popping font-medium dark:text-gray-200 ">
+                Follow us on
+              </div>
+              <div className="flex space-x-1 dark:bg-gray-900 ">
+                <a href="https://www.twitter.com" target="new tab">
+                  <img
+                    src={darkmode ? TwitterLight : Twitter}
+                    alt=""
+                    className="w-7"
+                  />
+                </a>
 
-            <div className="font-popping text-xl font-medium dark:text-gray-200">
-              Connect with Us
-            </div>
-            <div className="flex space-x-1 dark:bg-gray-900 mt-3">
-              <a href="https://www.facebook.com" target="new tab">
-                <img
-                  src={darkmode ? FacebookLight : Facebook}
-                  alt=""
-                  className="w-8"
-                />
-              </a>
-              <a href="https://www.google.com" target="new tab">
-                <img
-                  src={darkmode ? GoogleLight : Google}
-                  alt=""
-                  className="w-8"
-                />
-              </a>
-              <a href="https://www.linkedin.com" target="new tab">
-                <img
-                  src={darkmode ? LinkedinLight : Linkedin}
-                  alt=""
-                  className="w-8"
-                />
-              </a>
-              <a href="https://www.twitter.com" target="new tab">
-                <img
-                  src={darkmode ? TwitterLight : Twitter}
-                  alt=""
-                  className="w-8"
-                />
-              </a>
+                <a href="https://www.linkedin.com" target="new tab">
+                  <img
+                    src={darkmode ? LinkedinLight : Linkedin}
+                    alt=""
+                    className="w-7"
+                  />
+                </a>
+                <a href="https://www.facebook.com" target="new tab">
+                  <img
+                    src={darkmode ? FacebookLight : Facebook}
+                    alt=""
+                    className="w-7"
+                  />
+                </a>
+                <a href="https://www.google.com" target="new tab">
+                  <img
+                    src={darkmode ? githubLight : github}
+                    alt=""
+                    className="w-6"
+                  />
+                </a>
+              </div>
             </div>
             <ul className="mt-7 dark:text-gray-400 font-lato text-lg">
               {/* location  */}

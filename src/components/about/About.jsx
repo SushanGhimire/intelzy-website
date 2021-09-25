@@ -4,10 +4,7 @@ import OurTeam from "./OurTeam";
 function About() {
   return (
     <div className="flex flex-col">
-      <div
-        className="flex flex-col w-full width  width-padding mx-auto  mt-32"
-        id="about-us"
-      >
+      <div className="flex flex-col w-full  mt-32" id="about-us">
         {/* about card  */}
         <AboutCard />
         <OurTeam />

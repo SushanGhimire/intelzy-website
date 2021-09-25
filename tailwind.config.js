@@ -68,7 +68,8 @@ module.exports = {
         100: "32rem",
       },
       colors: {
-        footer: "#E9EBEE",
+        footer: "#e4e8ec",
+        // footer: "#d1d3d6",
         intelzy: "#F8373F",
       },
       spacing: {

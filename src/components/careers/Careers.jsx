@@ -61,19 +61,40 @@ function Careers() {
             return <CareerCard key={index} {...career} />;
           })}
         </div>
-        <div className="text-2xl text-center font-bold dark:text-gray-200">
+        <div className="text-2xl text-center font-bold dark:text-gray-200 mt-10">
           Internships
         </div>
         <div className="flex text-center  space-x-1 text-gray-600 mt-0.5">
-        We love watching talented people learn and explore their skills.
-        Our interns gain real work experience by pairing up with our developers on real projects. 
+          We love watching talented people learn and explore their skills. Our
+          interns gain real work experience by pairing up with our developers on
+          real projects.
         </div>
-        <div className="mt-10 text-center">
+        <div className="bg-gray-100 p-4  mx-auto mt-5 flex flex-col">
+          <div className=" text-center text-sm text-gray-600 font-lato">
+            <span>Applications are currently closed for Internships.</span>{" "}
+            <span>
+              Subscribe to newsletter to recieve updates about Internship
+              opportunities via email.
+            </span>
+          </div>
+          {/* newsletter  */}
+          <div className="hidden lg:flex mx-auto  space-x-4 items-center mt-5 border border-gray-300 rounded-full relative ">
+            <div>
+              <input
+                type="text"
+                className="lg:w-80 py-2.5 rounded-full focus:outline-none pl-5 pr-32 focus:ring-2 focus:ring-intelzy focus:ring-offset-2 bg-gray-100"
+              />
+            </div>
+            <button className="text-white rounded-full py-3 px-6  bg-intelzy absolute right-0 text-sm">
+              Subscribe
+            </button>
+          </div>
+        </div>
+        {/* <div className="mt-10 text-center">
             <a href="mailto:jobs@intelzy.com.np">
               <button className="button-style">Apply For Internship</button>
             </a>
-        </div>
-        
+        </div> */}
       </div>
     </div>
   );
