@@ -39,3 +39,7 @@
   .clip-full:hover .service-card-clip{
     clip-path: circle(141.4% at 100% 0);
   }
+  ul{
+    list-style:circle;
+    list-style-position: outside;
+  }

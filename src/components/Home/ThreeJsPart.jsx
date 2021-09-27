@@ -4,7 +4,7 @@ import logo from "../../assets/images/intelzyLogo2.png";
 function ThreeJsPart() {
   return (
     <div
-      className="width-padding text-white flex flex-col justify-center items-center h-96"
+      className="width-padding text-white flex flex-col justify-center items-center h-96 mt-20"
       style={{
         backgroundColor: "#24292E",
       }}

@@ -76,11 +76,14 @@ function PartnerSlider() {
     >
       {logos.map((logo, index) => {
         return (
-          <SwiperSlide className="flex items-center" key={index}>
+          <SwiperSlide
+            className="flex items-center dark:bg-gray-900"
+            key={index}
+          >
             <a href={logo.link} target="new tab " className="" key={index}>
               <img
                 src={logo.img}
-                className="mx-auto dark:bg-gray-900 h-16"
+                className="mx-auto dark:bg-gray-900 h-16 "
                 alt=""
               />
             </a>

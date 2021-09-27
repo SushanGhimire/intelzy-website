@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/services" component={Services} />
           <Route exact path="/about-us" component={About} />
           <Route exact path="/contact-us" component={ContactUs} />
-          <Route exact path="/careers/:id/:title" component={CareerResult} />
+          <Route exact path="/careers/:id/:slug" component={CareerResult} />
         </Switch>
         <Footer />
       </div>

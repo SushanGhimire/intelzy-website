@@ -7,37 +7,37 @@ function Footer() {
     {
       title: "Services",
       lists: [
-        { name: "Artificial Intelligence", link: "" },
-        { name: "Blockchain", link: "" },
-        { name: "Web Development", link: "" },
-        { name: "App Development", link: "" },
-        { name: "Quality Assurance", link: "" },
+        { name: "Artificial Intelligence" },
+        { name: "Blockchain" },
+        { name: "Web Development" },
+        { name: "App Development" },
+        { name: "Quality Assurance" },
       ],
     },
     {
       title: "Company",
       lists: [
-        { name: "About", link: "" },
-        { name: "Services", link: "" },
-        { name: "Blog", link: "" },
-        { name: "Contact", link: "" },
-        { name: "Careers", link: "" },
+        { name: "About", link: "/about-us" },
+        { name: "Services", link: "/services" },
+        { name: "Blog", link: "https://medium.com/@intelzy" },
+        { name: "Contact", link: "/contact-us" },
+        { name: "Careers", link: "/careers" },
       ],
     },
     {
       title: "Connect",
       lists: [
-        { name: "FAQs", link: "" },
-        { name: "Support", link: "" },
-        { name: "Blogs", link: "" },
-        { name: "Contact", link: "" },
+        { name: "FAQs", link: "/" },
+        { name: "Support", link: "/" },
+        { name: "Blogs", link: "/" },
+        { name: "Contact", link: "/" },
       ],
     },
     {
       title: "Legal",
       lists: [
-        { name: "Terms of Use", link: "" },
-        { name: "Privacy Policy", link: "" },
+        { name: "Terms of Use", link: "/" },
+        { name: "Privacy Policy", link: "/" },
       ],
     },
   ];
@@ -63,14 +63,26 @@ function Footer() {
                 <div className="space-y-3 text-gray-700 md:text-xs 2xl:text-base mt-3 dark:text-gray-300 flex flex-col">
                   {lists.map((list, index) => {
                     return (
-                      <a
-                        href={list.link}
-                        target="_blank"
-                        key={index}
-                        className="cursor-pointer"
-                      >
-                        {list.name}
-                      </a>
+                      <div key={index}>
+                        {list.link ? (
+                          <a
+                            href={list.link}
+                            target="_blank"
+                            // key={index}
+                            rel="noreferrer"
+                            className="cursor-pointer"
+                          >
+                            {list.name}
+                          </a>
+                        ) : (
+                          <div
+                            // key={index}
+                            className="cursor-pointer"
+                          >
+                            {list.name}
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
                 </div>
