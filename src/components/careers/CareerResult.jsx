@@ -1,26 +1,25 @@
 import React from "react";
-// import FrontPage from "../common/FrontPage";
-import Listing from "./Listing";
 import RecentJobs from "./RecentJobs";
 import TitleSubCat from "./TitleSubCat";
-
+import { useParams } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
 function CareerResult() {
-  const dutiesLists = [
-    " SEO, Social Media Marketing, Email Marketing, Google Adsense Marketing and Affiliate Marketing in one plan with marketing targets (reach, engagement, conversions) and revenue target (Ex. $100,000 in six months).",
-    "Help select the right tools for sales and marketing.",
-    "Designate/Outsource marketing tasks as per need.",
-    "Monitor implementation and co-ordinate with the team.",
-    "Learn new marketing ideas and incorporate that in the plan.",
-    "Attending workshops and meetings as required.",
-    "Providing training to new marketing staff.",
-    "Preparing and submitting periodic reports.",
-  ];
-  const positionList = [
-    " 1 years plus experience of working in sales and marketing for e-commerce, SAAS industry or similar. ",
-    "Fluent in speaking and writing English and Nepali.",
-    "Computer Skills (Word, Excel, Cloud based software, Emails)",
-    "Educational Qualification - Should have passed high school at least.",
-  ];
+  const [jobDetail, setJobDetail] = React.useState([]);
+  const { slug } = useParams();
+  React.useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    axiosInstance
+      .get(`/jobvacancy/detail/${slug}/`, { signal })
+      .then((res) => {
+        setJobDetail(res.data);
+        // console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="flex flex-col ">
       {/* <FrontPage
@@ -34,37 +33,19 @@ function CareerResult() {
       >
         {/* right side  */}
         <div className="flex-1 flex-flex-col  md:border-r border-gray-200 dark:border-gray-600">
-          <TitleSubCat />
+          {jobDetail && (
+            <TitleSubCat
+              title={jobDetail.title}
+              job_type={jobDetail.job_type}
+              posted={jobDetail.created_at}
+              location={jobDetail.location}
+            />
+          )}
           {/* main description  */}
-          <div className="flex flex-col font-lato mt-5 dark:text-gray-400">
-            <span>
-              Intelzy is looking for a Software Engineer who is motivated and
-              confident to work in the following stacks:
-            </span>
-            <ul className="mt-3 mb-5">
-              <li>- Reactjs & NodeJs,</li>
-              <li>- SQL and NoSQL databases</li>
-              <li>- GraphQL</li>
-            </ul>
-            <span>
-              An ideal candidate is someone who has at least two years of
-              professional full-stack development experience.
-            </span>
-          </div>
-          {/* qualification */}
-          <div className="flex flex-col mt-10">
-            <div className="text-lg font-medium dark:text-gray-200">
-              Technical Qualifications:
-            </div>
-            <Listing lists={dutiesLists} />
-          </div>
-          {/* company benifits  */}
-          <div className="flex flex-col mt-10">
-            <div className="text-lg font-medium dark:text-gray-200">
-              Company Benefits:
-            </div>
-            <Listing lists={positionList} />
-          </div>
+          <div
+            className="font-lato mt-10 dark:text-gray-200"
+            dangerouslySetInnerHTML={{ __html: jobDetail.description }}
+          ></div>
           {/* Apply */}
           <div className="flex flex-col mt-10">
             <div className="text-lg font-medium dark:text-gray-200">Apply:</div>

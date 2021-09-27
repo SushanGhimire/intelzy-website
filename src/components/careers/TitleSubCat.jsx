@@ -1,18 +1,16 @@
 import React from "react";
 
-function TitleSubCat() {
+function TitleSubCat({ title, job_type, posted, location }) {
   return (
     <div>
       {/* title  */}
-      <div className="text-2xl font-semibold dark:text-gray-200">
-        Software Engineer (MERN)
-      </div>
+      <div className="text-2xl font-semibold dark:text-gray-200">{title}</div>
       {/* sub categories  */}
       <div className="flex space-x-4 items-center mt-2 flex-wrap space-y-2">
         {/* full time */}
         <div>
           <button className="text-white bg-intelzy text-sm px-2 py-1">
-            Full Time
+            {job_type === "FT" ? "Full Time" : "Part Time"}
           </button>
         </div>
         {/* location  */}
@@ -39,7 +37,7 @@ function TitleSubCat() {
               />
             </svg>
           </div>
-          <span className="text-sm font-font-lato">Saptagandaki Chock</span>
+          <span className="text-sm font-font-lato">{location}</span>
         </div>
         {/* date  */}
         <div className="flex items-center space-x-1 text-gray-600">
@@ -59,7 +57,9 @@ function TitleSubCat() {
               />
             </svg>
           </div>
-          <span className="text-sm font-font-lato">Posted 5 days ago</span>
+          <span className="text-sm font-font-lato">
+            Posted {posted ? posted.split("T")[0] : ""}
+          </span>
         </div>
       </div>
     </div>

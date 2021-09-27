@@ -28,7 +28,7 @@ function FlexCard({ content, flex, img, des, aos }) {
         }`}
       >
         <div className="title-text dark:text-gray-200">{content}</div>
-        <div className="mt-2 text-gray-700 text-sm md:text-base dark:text-gray-400">
+        <div className="mt-2 text-gray-700 text-sm md:text-base dark:text-gray-400 text-justify">
           {des}
         </div>
       </div>
