@@ -18,7 +18,8 @@ function Footer() {
       title: "Company",
       lists: [
         { name: "About", link: "" },
-        { name: "Blogs", link: "" },
+        { name: "Services", link: "" },
+        { name: "Blog", link: "" },
         { name: "Contact", link: "" },
         { name: "Careers", link: "" },
       ],
@@ -78,7 +79,7 @@ function Footer() {
           })}
         </div>
         {/* copyright  */}
-        <div className=" px-2.5 text-gray-800 font-medium mt-5 pb-10">
+        <div className=" px-2.5 text-gray-800 dark:text-gray-300 font-medium mt-5 pb-10">
           &copy;{n} Intelzy . All Rights Reserved
         </div>
       </div>

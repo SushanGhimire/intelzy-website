@@ -18,14 +18,14 @@ function Navbar({ loggedIn, role }) {
     {
       name: "About",
       path: "/about-us",
-    },
-    {
-      name: "Blogs",
-      path: "",
-    },
+    },    
     {
       name: "Services",
       path: "/services",
+    },
+    {
+      name: "Blog",
+      path: "",
     },
     {
       name: "Contact",
@@ -189,7 +189,7 @@ function Navbar({ loggedIn, role }) {
                       scrollToTop();
                     }}
                   >
-                    Career
+                    Careers
                   </Link>
                 </div>
               </div>

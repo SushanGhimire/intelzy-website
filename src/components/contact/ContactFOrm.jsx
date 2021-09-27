@@ -64,7 +64,7 @@ function ContactFOrm() {
             <input
               type="text"
               className="input-style"
-              placeholder="Enter your contact number.."
+              placeholder="Enter your title.."
             />
           </div>
         </div>
@@ -79,7 +79,7 @@ function ContactFOrm() {
           <div>
             <textarea
               className="input-style"
-              placeholder="Enter your contact number.."
+              placeholder="Enter your message.."
               name=""
               id=""
               rows="5"
