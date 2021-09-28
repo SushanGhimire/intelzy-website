@@ -10,12 +10,20 @@ import githubLight from "../../assets/images/icons/githubLight.svg";
 import LinkedinLight from "../../assets/images/icons/LinkedinLight.svg";
 import TwitterLight from "../../assets/images/icons/TwitterLight.svg";
 import { useSelector } from "react-redux";
-function ContactUs() {
+import Three from "../common/Three";
+function ContactUs({ setNav }) {
   const { darkmode } = useSelector((state) => state.darkmode);
+  React.useEffect(() => {
+    setNav(window.location.pathname.split("/")[1]);
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="flex flex-col ">
+      <div className="mt-20 h-100  z-0">
+        <Three />
+      </div>
       <div
-        className="flex flex-col w-full width  width-padding mx-auto mb-10 mt-40"
+        className="flex flex-col w-full width  width-padding mx-auto mb-10 "
         id="careers"
       >
         <div className="text-2xl font-semibold dark:text-gray-200">
@@ -90,7 +98,7 @@ function ContactUs() {
                     />
                   </svg>
                 </span>
-                <span>Saptagandaki Chock, Bharatpur-10, Chitwan Nepal</span>
+                <span>Saptagandaki Chowk, Bharatpur-10, Chitwan Nepal</span>
               </li>
               {/* Phone  */}
               <li className="mb-4 flex items-center space-x-1">
