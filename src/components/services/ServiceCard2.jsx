@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-function ServiceCard2({ flex, title, des }) {
+import AOS from "aos";
+import "aos/dist/aos.css";
+function ServiceCard2({ flex, title, des, aos }) {
+  const [width, setWidth] = useState(window.innerWidth);
   const { darkmode } = useSelector((state) => state.darkmode);
+  const handleWidth = () => {
+    const innerWidth = window.innerWidth;
+    if (innerWidth < 768) {
+      setWidth(innerWidth);
+    }
+  };
+  useEffect(() => {
+    AOS.init();
+    window.addEventListener("resize", handleWidth);
+    return () => {
+      window.removeEventListener("resize", handleWidth);
+    };
+  }, []);
   return (
-    <div className={`flex justify-between items-center mt-3`}>
+    <div
+      className={`flex justify-between items-center mt-3`}
+      data-aos={width > 768 && aos}
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1700"
+    >
       {/* left card  */}
       <div
         className={`flex-1 hidden md:block rounded-xl  ${
