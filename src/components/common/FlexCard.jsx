@@ -18,7 +18,7 @@ function FlexCard({ content, flex, img, des, aos }) {
   }, []);
   return (
     <div
-      className={`md:flex ${flex} items-center mt-10 space-x-10  width mx-auto width-padding `}
+      className={`md:flex ${flex} items-center mt-10 md:space-x-10  width mx-auto width-padding `}
       id="scroll"
     >
       {/* content  */}
@@ -34,7 +34,7 @@ function FlexCard({ content, flex, img, des, aos }) {
       </div>
       {/* image  */}
       <div
-        className="flex-1 mt-10 md:mt-0"
+        className="flex-1 mt-10 md:mt-0 px-5 md:px-0"
         data-aos={width > 768 && aos}
         data-aos-anchor-placement="top-bottom"
         data-aos-duration="1700"

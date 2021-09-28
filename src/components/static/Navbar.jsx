@@ -6,9 +6,9 @@ import logo2 from "../../assets/images/intelzyLogo2.png";
 // import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../redux/actions/action";
-function Navbar({ loggedIn, role }) {
+function Navbar({ nav }) {
+  // let nav = window.location.pathname.split("/")[1];
   const dispatch = useDispatch();
-  let nav = window.location.pathname.split("/")[1];
   const [width, setWidth] = useState(window.innerWidth);
   const [position, setPosition] = useState(0);
   const mobileSidebar = useRef();
@@ -18,7 +18,7 @@ function Navbar({ loggedIn, role }) {
     {
       name: "About",
       path: "/about-us",
-    },    
+    },
     {
       name: "Services",
       path: "/services",
@@ -81,16 +81,16 @@ function Navbar({ loggedIn, role }) {
           position ? "bg-white dark:bg-gray-900" : ""
         } ${darkmode ? "border-b dark:bg-gray-900 border-gray-800 dark" : ""}`}
       >
-        <div className="absolute top-9 sm:top-12 lg:top-9 right-32 lg:right-6">
+        <div className="absolute top-10 sm:top-12 lg:top-9 right-32 lg:right-6">
           <div
-            className="p-1 bg-intelzy dark:bg-gray-200 w-14 rounded-full cursor-pointer"
+            className="p-1 bg-intelzy dark:bg-gray-200 w-10 md:w-14 rounded-full cursor-pointer"
             onClick={toggleDarkMode}
           >
             <div
               className={` rounded-full  animation cursor-pointer 
-              transform ${darkmode ? "translate-x-6" : ""}`}
+              transform ${darkmode ? "translate-x-4 md:translate-x-6" : ""}`}
             >
-              <div className="bg-white dark:bg-gray-900 dark:text-gray-200 rounded-full w-6 h-6 flex justify-center items-center relative group">
+              <div className="bg-white dark:bg-gray-900 dark:text-gray-200 rounded-full w-4 h-4 md:w-6 md:h-6 flex justify-center items-center relative group">
                 <div className="hidden lg:flex absolute bg-white w-28 rounded-md opacity-0 group-hover:opacity-100 top-10 right-0 px-2 dark:text-gray-800">
                   {!darkmode ? "dark mode" : "light mode"}
                 </div>
@@ -154,30 +154,34 @@ function Navbar({ loggedIn, role }) {
                     const { name, path } = content;
                     return (
                       <div key={index} className="relative">
-                        {path === "" ? (<a href="https://medium.com/@intelzy"
-                        target="new tab"
-                          className={`animation flex  py-9  space-x-1  
+                        {path === "" ? (
+                          <a
+                            href="https://medium.com/@intelzy"
+                            target="new tab"
+                            className={`animation flex  py-9  space-x-1  
+                      ${position && "hover:text-intelzy"}
+                       ${nav ? "hover:text-intelzy" : "hover:text-white"}
+                       `}
+                            onClick={() => {
+                              scrollToTop();
+                            }}
+                          >
+                            <div> {name}</div>
+                          </a>
+                        ) : (
+                          <Link
+                            to={path}
+                            className={`animation flex  py-9  space-x-1  
                       ${position && "hover:text-intelzy"} ${
-                            nav ? "hover:text-intelzy" : "hover:text-white"
-                          }`}
-                          onClick={() => {
-                            scrollToTop();
-                          }}
-                        >
-                          <div> {name}</div>
-                        </a>):(<Link
-                          to={path}
-                          className={`animation flex  py-9  space-x-1  
-                      ${position && "hover:text-intelzy"} ${
-                            nav ? "hover:text-intelzy" : "hover:text-white"
-                          }`}
-                          onClick={() => {
-                            scrollToTop();
-                          }}
-                        >
-                          <div> {name}</div>
-                        </Link>)}
-                        
+                              nav ? "hover:text-intelzy" : "hover:text-white"
+                            }`}
+                            onClick={() => {
+                              scrollToTop();
+                            }}
+                          >
+                            <div> {name}</div>
+                          </Link>
+                        )}
                       </div>
                     );
                   })}
@@ -236,7 +240,10 @@ function Navbar({ loggedIn, role }) {
                     contents.map((content, index) => {
                       const { name, path } = content;
                       return (
-                        <div key={index} className="relative">
+                        <div
+                          key={index}
+                          className="relative dark:text-gray-200"
+                        >
                           <Link
                             to={path}
                             className={`text-center`}

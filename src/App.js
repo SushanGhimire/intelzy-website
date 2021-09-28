@@ -11,17 +11,39 @@ import ContactUs from "./components/contact/ContactUs";
 import Services from "./components/services/Services";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
+  const [nav, setNav] = React.useState("");
+
   return (
     <div className={`${darkmode ? "dark" : ""}`}>
       <div className="font-popping dark:bg-gray-900">
-        <Navbar />
+        <Navbar nav={nav} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/careers" component={Careers} />
-          <Route exact path="/services" component={Services} />
-          <Route exact path="/about-us" component={About} />
-          <Route exact path="/contact-us" component={ContactUs} />
-          <Route exact path="/careers/:id/:slug" component={CareerResult} />
+          <Route
+            exact
+            path="/careers"
+            render={(props) => <Careers setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/services"
+            render={(props) => <Services setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/about-us"
+            render={(props) => <About setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/contact-us"
+            render={(props) => <ContactUs setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/careers/:id/:slug"
+            render={(props) => <CareerResult setNav={setNav} {...props} />}
+          />
         </Switch>
         <Footer />
       </div>
