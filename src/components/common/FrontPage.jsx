@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import front from "../../assets/images/frontpageimg.png";
+import front from "../../assets/images/employee.svg";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { Link } from "react-scroll";
 import { useSelector } from "react-redux";
@@ -44,8 +44,15 @@ function FrontPage({ header, des, start, scroll }) {
                 className=" font-black text-gray-800 dark:text-gray-200"
                 style={{
                   lineHeight: 1.2,
-                  fontSize: window.innerWidth < 1024 ? "40px" : "48px",
-                  fontWeight: 700,
+                  fontSize: window.innerWidth < 1024 ? "48spx" : "72px",
+                  fontWeight: 800,
+
+                  background: 'linear-gradient(#333,#F8373F)',
+                  webkitBackgroundClip:"text",
+                  webkitTextFillColor:"transparent"
+                 
+                  
+                  
                 }}
               >
                 {header}
@@ -61,9 +68,9 @@ function FrontPage({ header, des, start, scroll }) {
                     spy={true}
                     className="justify-center  cursor-pointer mt-10 group z-40"
                   >
-                  <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
+                  {/* <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
                   Start Now
-                  </button>                   
+                  </button>                    */}
                 </Link>
                 </div>
               )}

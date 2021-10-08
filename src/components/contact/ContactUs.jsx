@@ -18,10 +18,10 @@ function ContactUs({ setNav }) {
     // eslint-disable-next-line
   }, []);
   return (
-    <div className="flex flex-col ">
-      <div className="mt-20 h-100  z-0">
+    <div className="flex flex-col mt-28  ">
+      {/* <div className="mt-20 h-100  z-0">
         <Three />
-      </div>
+      </div> */}
       <div
         className="flex flex-col w-full width  width-padding mx-auto mb-10 "
         id="careers"

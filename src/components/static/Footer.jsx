@@ -27,16 +27,14 @@ function Footer() {
     {
       title: "Connect",
       lists: [
-        { name: "FAQs", link: "/" },
-        { name: "Support", link: "/" },
-        { name: "Blogs", link: "/" },
+        { name: "FAQs", link: "/" },              
         { name: "Contact", link: "/" },
       ],
     },
     {
       title: "Legal",
       lists: [
-        { name: "Terms of Use", link: "/" },
+        // { name: "Terms of Use", link: "/" },
         { name: "Privacy Policy", link: "/" },
       ],
     },
@@ -67,9 +65,9 @@ function Footer() {
                         {list.link ? (
                           <a
                             href={list.link}
-                            target="_blank"
+                            // target="_blank"
                             // key={index}
-                            rel="noreferrer"
+                            // rel="noreferrer"
                             className="cursor-pointer"
                           >
                             {list.name}

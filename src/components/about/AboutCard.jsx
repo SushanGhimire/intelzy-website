@@ -1,9 +1,12 @@
 import React from "react";
-import front from "../../assets/images/frontpageimg.png";
+import bg from "../../assets/images/bg.png";
 
 function AboutCard() {
   return (
-    <div className="md:flex items-center md:space-x-10 width  width-padding mx-auto ">
+    <div className="relative md:flex items-center md:space-x-10 width  width-padding mx-auto ">
+      <div className="absolute right-0">
+        <img src={bg} alt="" className="opacity-20" />
+      </div>
       <div className="flex-1 relative py-7">
         <div
           className=" font-black text-gray-800 dark:text-gray-200"
@@ -35,7 +38,7 @@ function AboutCard() {
         </div>
       </div>
       <div className="flex-1 mt-10 md:mt-0 z-40">
-        <img src={front} alt="" className="mx-auto" />
+        {/* <img src={bg} alt="" className="mx-auto" /> */}
       </div>
     </div>
   );
