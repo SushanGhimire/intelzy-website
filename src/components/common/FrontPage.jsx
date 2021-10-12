@@ -25,7 +25,7 @@ function FrontPage({ header, des, start, scroll }) {
     >
       <div
         className={`absolute top-0 right-0 w-full h-full  opacity-80 from-blue-400 to-intelzy via-indigo-500 ${
-          darkmode ? "" : "bg-gradient-to-r"
+          darkmode ? "bg-gradient-to-r" : "bg-gradient-to-r"
         }
       animate-gradient-x z-0 mix-blend-multiply`}
         style={{
@@ -47,12 +47,9 @@ function FrontPage({ header, des, start, scroll }) {
                   fontSize: window.innerWidth < 1024 ? "48spx" : "72px",
                   fontWeight: 800,
 
-                  background: 'linear-gradient(#333,#F8373F)',
-                  webkitBackgroundClip:"text",
-                  webkitTextFillColor:"transparent"
-                 
-                  
-                  
+                  background: "linear-gradient(#333,#F8373F)",
+                  webkitBackgroundClip: "text",
+                  webkitTextFillColor: "transparent",
                 }}
               >
                 {header}
@@ -61,17 +58,17 @@ function FrontPage({ header, des, start, scroll }) {
                 {des}
               </div>
               {start && (
-                <div>                  
+                <div>
                   <Link
                     activeClass="active"
                     to={scroll}
                     spy={true}
                     className="justify-center  cursor-pointer mt-10 group z-40"
                   >
-                  {/* <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
+                    {/* <button className="text-white rounded-full py-3 px-6 mt-3 bg-intelzy">
                   Start Now
                   </button>                    */}
-                </Link>
+                  </Link>
                 </div>
               )}
             </div>
