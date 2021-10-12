@@ -10,7 +10,7 @@ import githubLight from "../../assets/images/icons/githubLight.svg";
 import LinkedinLight from "../../assets/images/icons/LinkedinLight.svg";
 import TwitterLight from "../../assets/images/icons/TwitterLight.svg";
 import { useSelector } from "react-redux";
-import Three from "../common/Three";
+// import Three from "../common/Three";
 function ContactUs({ setNav }) {
   const { darkmode } = useSelector((state) => state.darkmode);
   React.useEffect(() => {
@@ -18,8 +18,8 @@ function ContactUs({ setNav }) {
     // eslint-disable-next-line
   }, []);
   return (
-    <div className="flex flex-col mt-28  ">
-      {/* <div className="mt-20 h-100  z-0">
+    <div className="flex flex-col pt-28  ">
+      {/* <div className="mt-20 h-100  z-0 mx-w-2xl mx-au">
         <Three />
       </div> */}
       <div
