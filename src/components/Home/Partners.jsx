@@ -10,7 +10,7 @@ function Partners() {
       <div className="text-center text-gray-700 mt-2 dark:text-gray-400 width mx-auto ">
         We provide on-time and high-quality delivery to our clients.       
       </div>
-      <div className="w-full   overflow-hidden width mx-auto mt-10">
+      <div className="w-full  overflow-hidden width mx-auto mt-10">
         <PartnerSlider />
       </div>
     </div>
