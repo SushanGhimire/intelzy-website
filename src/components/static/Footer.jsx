@@ -2,43 +2,65 @@ import React from "react";
 import logo from "../../assets/images/intelzyLogo.png";
 import logo2 from "../../assets/images/intelzyLogo2.png";
 import { useSelector } from "react-redux";
+import fb from "../../assets/images/icons/fb.svg";
+import insta from "../../assets/images/icons/insta.svg";
+import twitter from "../../assets/images/icons/twitter-footer.svg";
+import linkedin from "../../assets/images/icons/linkedin-footer.svg";
+const footerContent = [
+  {
+    title: "Services",
+    lists: [
+      { name: "Artificial Intelligence" },
+      { name: "Blockchain" },
+      { name: "Web Development" },
+      { name: "App Development" },
+      { name: "Quality Assurance" },
+    ],
+  },
+  {
+    title: "Company",
+    lists: [
+      { name: "About", link: "/about-us" },
+      { name: "Services", link: "/services" },
+      { name: "Blog", link: "https://medium.com/@intelzy" },
+      { name: "Contact", link: "/contact-us" },
+      { name: "Careers", link: "/careers" },
+    ],
+  },
+  {
+    title: "Connect",
+    lists: [
+      { name: "FAQs", link: "/faqs" },
+      { name: "Contact", link: "/" },
+    ],
+  },
+  {
+    title: "Legal",
+    lists: [
+      // { name: "Terms of Use", link: "/" },
+      { name: "Privacy Policy", link: "/privacy-policy" },
+    ],
+  },
+];
+const social = [
+  {
+    logo: fb,
+    link: "https://www.facebook.com/intelzy",
+  },
+  {
+    logo: insta,
+    link: "https://www.instagram.com",
+  },
+  {
+    logo: twitter,
+    link: "https://twitter.com/intelzy/",
+  },
+  {
+    logo: linkedin,
+    link: "https://www.linkedin.com/company/intelzy",
+  },
+];
 function Footer() {
-  const footerContent = [
-    {
-      title: "Services",
-      lists: [
-        { name: "Artificial Intelligence" },
-        { name: "Blockchain" },
-        { name: "Web Development" },
-        { name: "App Development" },
-        { name: "Quality Assurance" },
-      ],
-    },
-    {
-      title: "Company",
-      lists: [
-        { name: "About", link: "/about-us" },
-        { name: "Services", link: "/services" },
-        { name: "Blog", link: "https://medium.com/@intelzy" },
-        { name: "Contact", link: "/contact-us" },
-        { name: "Careers", link: "/careers" },
-      ],
-    },
-    {
-      title: "Connect",
-      lists: [
-        { name: "FAQs", link: "/faqs" },
-        { name: "Contact", link: "/" },
-      ],
-    },
-    {
-      title: "Legal",
-      lists: [
-        // { name: "Terms of Use", link: "/" },
-        { name: "Privacy Policy", link: "/privacy-policy" },
-      ],
-    },
-  ];
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   var d = new Date();
   var n = d.getFullYear();
@@ -49,7 +71,7 @@ function Footer() {
           <img src={darkmode ? logo2 : logo} className="w-36" alt="" />
         </div>
         {/* grid  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-5 px-2.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-5 px-2.5">
           {footerContent.map((footer, index) => {
             const { title, lists } = footer;
             return (
@@ -87,6 +109,30 @@ function Footer() {
               </div>
             );
           })}
+          {/* social  */}
+          <div className="flex flex-col">
+            <div className="text-lg uppercase text-intelzy tracking-wide ">
+              Social
+            </div>
+            <div>
+              <div className="flex items-center space-x-2 mt-3">
+                {social.map((data, index) => {
+                  const { logo, link } = data;
+                  return (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-intelzy rounded-full p-2 animation transform hover:scale-110"
+                      key={index}
+                    >
+                      <img src={logo} className="w-6" alt="" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
         {/* copyright  */}
         <div className=" px-2.5 text-gray-800 dark:text-gray-300 font-medium mt-5 pb-10">
