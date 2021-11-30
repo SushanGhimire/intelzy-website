@@ -35,7 +35,7 @@ function Footer() {
       title: "Legal",
       lists: [
         // { name: "Terms of Use", link: "/" },
-        { name: "Privacy Policy", link: "/" },
+        { name: "Privacy Policy", link: "/privacy-policy" },
       ],
     },
   ];

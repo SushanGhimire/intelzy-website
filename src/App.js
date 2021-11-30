@@ -10,6 +10,7 @@ import CareerResult from "./components/careers/CareerResult";
 import ContactUs from "./components/contact/ContactUs";
 import Services from "./components/services/Services";
 import Faqs from "./components/faq/Faqs";
+import PrivacyPolicy from "./components/privacy-policy/PrivacyPolicy";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   const [nav, setNav] = React.useState("");
@@ -49,6 +50,11 @@ function App() {
             exact
             path="/faqs"
             render={(props) => <Faqs setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/privacy-policy"
+            render={(props) => <PrivacyPolicy setNav={setNav} {...props} />}
           />
         </Switch>
         <Footer />
