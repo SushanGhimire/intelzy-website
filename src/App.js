@@ -9,6 +9,7 @@ import About from "./components/about/About";
 import CareerResult from "./components/careers/CareerResult";
 import ContactUs from "./components/contact/ContactUs";
 import Services from "./components/services/Services";
+import Faqs from "./components/faq/Faqs";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
   const [nav, setNav] = React.useState("");
@@ -43,6 +44,11 @@ function App() {
             exact
             path="/careers/:id/:slug"
             render={(props) => <CareerResult setNav={setNav} {...props} />}
+          />
+          <Route
+            exact
+            path="/faqs"
+            render={(props) => <Faqs setNav={setNav} {...props} />}
           />
         </Switch>
         <Footer />

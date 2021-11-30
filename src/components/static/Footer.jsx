@@ -27,7 +27,7 @@ function Footer() {
     {
       title: "Connect",
       lists: [
-        { name: "FAQs", link: "/" },              
+        { name: "FAQs", link: "/faqs" },
         { name: "Contact", link: "/" },
       ],
     },

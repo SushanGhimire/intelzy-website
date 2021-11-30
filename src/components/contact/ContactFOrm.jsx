@@ -1,73 +1,42 @@
-import React from "react";
-
+import React, { useState } from "react";
+import InputFields from "../common/InputFields";
+import input from "./input";
 function ContactFOrm() {
+  const [data, setData] = useState({
+    name: "",
+    contact: "",
+    email: "",
+    title: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  const { message } = data;
   return (
     <div>
-      <form action="" className="grid lg:grid-cols-2 gap-6 font-lato">
+      <form
+        action=""
+        onSubmit={handleSubmit}
+        className="grid lg:grid-cols-2 gap-6 font-lato"
+      >
         {/* name  */}
-        <div>
-          <label
-            htmlFor=""
-            className="text-lg font-medium text-gray-700 dark:text-gray-200"
-          >
-            Name
-          </label>
-          <div>
-            <input
-              type="text"
-              className="input-style"
-              placeholder="Enter your name.."
+        {input.map((val, index) => {
+          return (
+            <InputFields
+              key={index}
+              {...val}
+              value={data[val.name]}
+              handleChange={handleChange}
             />
-          </div>
-        </div>
-        {/* Contact  */}
-        <div>
-          <label
-            htmlFor=""
-            className="text-lg font-medium text-gray-700 dark:text-gray-200"
-          >
-            Contact
-          </label>
-          <div>
-            <input
-              type="number"
-              className="input-style"
-              placeholder="Enter your contact number.."
-            />
-          </div>
-        </div>
-        {/* Email  */}
-        <div className="lg:col-span-2">
-          <label
-            htmlFor=""
-            className="text-lg font-medium text-gray-700 dark:text-gray-200"
-          >
-            Email
-          </label>
-          <div>
-            <input
-              type="email"
-              className="input-style"
-              placeholder="Enter your email address.."
-            />
-          </div>
-        </div>
-        {/* title  */}
-        <div className="lg:col-span-2">
-          <label
-            htmlFor=""
-            className="text-lg font-medium text-gray-700 dark:text-gray-200"
-          >
-            Title
-          </label>
-          <div>
-            <input
-              type="text"
-              className="input-style"
-              placeholder="Enter your title.."
-            />
-          </div>
-        </div>
+          );
+        })}
         {/* Message  */}
         <div className="lg:col-span-2">
           <label
@@ -80,9 +49,11 @@ function ContactFOrm() {
             <textarea
               className="input-style"
               placeholder="Enter your message.."
-              name=""
-              id=""
+              name="message"
+              id="mesage"
               rows="5"
+              value={message}
+              onChange={(e) => handleChange(e)}
             ></textarea>
           </div>
         </div>
