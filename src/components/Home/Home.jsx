@@ -38,11 +38,10 @@ function Home() {
   return (
     <div className=" flex flex-col">
       <FrontPage
-        header="Something Special here"
+        header="Connecting idea and innovation"
         des=""
         start="true"
         scroll="scroll"
-        
       />
       {flexCard.map((card, index) => {
         const { content, flex, des, img, aos } = card;
