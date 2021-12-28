@@ -2,11 +2,7 @@ import React from "react";
 // import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
 
-function Services({ setNav }) {
-  React.useEffect(() => {
-    setNav(window.location.pathname.split("/")[1]);
-    // eslint-disable-next-line
-  }, []);
+function Services() {
   let services = [
     {
       sn: "1",

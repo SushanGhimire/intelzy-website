@@ -13,49 +13,19 @@ import Faqs from "./components/faq/Faqs";
 import PrivacyPolicy from "./components/privacy-policy/PrivacyPolicy";
 function App() {
   const darkmode = useSelector((state) => state.darkmode.darkmode);
-  const [nav, setNav] = React.useState("");
-
   return (
     <div className={`${darkmode ? "dark" : ""}`}>
       <div className="font-popping dark:bg-gray-900">
-        <Navbar nav={nav} />
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route
-            exact
-            path="/careers"
-            render={(props) => <Careers setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/services"
-            render={(props) => <Services setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/about-us"
-            render={(props) => <About setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/contact-us"
-            render={(props) => <ContactUs setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/careers/:id/:slug"
-            render={(props) => <CareerResult setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/faqs"
-            render={(props) => <Faqs setNav={setNav} {...props} />}
-          />
-          <Route
-            exact
-            path="/privacy-policy"
-            render={(props) => <PrivacyPolicy setNav={setNav} {...props} />}
-          />
+          <Route exact path="/careers" component={Careers} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/about-us" component={About} />
+          <Route exact path="/contact-us" component={ContactUs} />
+          <Route exact path="/careers/:id/:slug" component={CareerResult} />
+          <Route exact path="/faqs" component={Faqs} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         </Switch>
         <Footer />
       </div>

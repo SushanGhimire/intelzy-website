@@ -1,10 +1,8 @@
 import React from "react";
 import AboutCard from "./AboutCard";
 import OurTeam from "./OurTeam";
-function About({ setNav }) {
+function About() {
   React.useEffect(() => {
-    setNav(window.location.pathname.split("/")[1]);
-    // eslint-disable-next-line
   }, []);
   return (
     <div className="flex flex-col">

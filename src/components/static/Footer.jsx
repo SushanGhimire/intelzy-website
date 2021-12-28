@@ -6,6 +6,8 @@ import fb from "../../assets/images/icons/fb.svg";
 import insta from "../../assets/images/icons/insta.svg";
 import twitter from "../../assets/images/icons/twitter-footer.svg";
 import linkedin from "../../assets/images/icons/linkedin-footer.svg";
+import { NavLink } from "react-router-dom";
+
 const footerContent = [
   {
     title: "Services",
@@ -85,22 +87,14 @@ function Footer() {
                     return (
                       <div key={index}>
                         {list.link ? (
-                          <a
-                            href={list.link}
-                            // target="_blank"
-                            // key={index}
-                            // rel="noreferrer"
-                            className="cursor-pointer"
+                          <NavLink
+                            to={list.link}
+                            onClick={() => window.scrollTo(0, 0)}
                           >
                             {list.name}
-                          </a>
+                          </NavLink>
                         ) : (
-                          <div
-                            // key={index}
-                            className="cursor-pointer"
-                          >
-                            {list.name}
-                          </div>
+                          <div className="cursor-pointer">{list.name}</div>
                         )}
                       </div>
                     );

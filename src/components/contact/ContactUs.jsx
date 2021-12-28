@@ -11,12 +11,9 @@ import LinkedinLight from "../../assets/images/icons/LinkedinLight.svg";
 import TwitterLight from "../../assets/images/icons/TwitterLight.svg";
 import { useSelector } from "react-redux";
 // import Three from "../common/Three";
-function ContactUs({ setNav }) {
+function ContactUs() {
   const { darkmode } = useSelector((state) => state.darkmode);
-  React.useEffect(() => {
-    setNav(window.location.pathname.split("/")[1]);
-    // eslint-disable-next-line
-  }, []);
+
   return (
     <div className="flex flex-col pt-28  ">
       {/* <div className="mt-20 h-100  z-0 mx-w-2xl mx-au">

@@ -3,7 +3,7 @@ import axiosInstance from "../../api/axiosInstance";
 // import FrontPage from "../common/FrontPage";
 import CareerCard from "./CareerCard";
 
-function Careers({ setNav }) {
+function Careers() {
   const [careers, setCarrers] = React.useState([]);
   React.useEffect(() => {
     const controller = new AbortController();
@@ -17,10 +17,6 @@ function Careers({ setNav }) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  React.useEffect(() => {
-    setNav(window.location.pathname.split("/")[1]);
-    // eslint-disable-next-line
   }, []);
   return (
     <div className="flex flex-col ">

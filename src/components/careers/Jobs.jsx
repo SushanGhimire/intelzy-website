@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 function Jobs({
   title,
   created_at,
@@ -8,9 +9,10 @@ function Jobs({
   location,
   job_location,
 }) {
+  const history = useHistory();
   const scrollToTop = () => window.scrollTo(0, 0);
   const openJob = () => {
-    window.location = `/careers/${id}/${slug}`;
+    history.push(`/careers/${id}/${slug}`);
     scrollToTop();
   };
   return (

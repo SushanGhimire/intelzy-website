@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/images/intelzyLogo.png";
 import logo2 from "../../assets/images/intelzyLogo2.png";
 // import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../redux/actions/action";
-function Navbar({ nav }) {
+function Navbar() {
   // let nav = window.location.pathname.split("/")[1];
   const dispatch = useDispatch();
   const [width, setWidth] = useState(window.innerWidth);
@@ -158,10 +158,7 @@ function Navbar({ nav }) {
                           <a
                             href="https://medium.com/@intelzy"
                             target="new tab"
-                            className={`animation flex  py-9  space-x-1  
-                      ${position && "hover:text-intelzy"}
-                       ${nav ? "hover:text-intelzy" : "hover:text-white"}
-                       `}
+                            className={`animation flex  py-9  space-x-1`}
                             onClick={() => {
                               scrollToTop();
                             }}
@@ -169,18 +166,16 @@ function Navbar({ nav }) {
                             <div> {name}</div>
                           </a>
                         ) : (
-                          <Link
+                          <NavLink
                             to={path}
-                            className={`animation flex  py-9  space-x-1  
-                      ${position && "hover:text-intelzy"} ${
-                              nav ? "hover:text-intelzy" : "hover:text-white"
-                            }`}
+                            activeClassName="text-intelzy"
+                            className={`animation flex  py-9  space-x-1 `}
                             onClick={() => {
                               scrollToTop();
                             }}
                           >
                             <div> {name}</div>
-                          </Link>
+                          </NavLink>
                         )}
                       </div>
                     );
@@ -244,16 +239,30 @@ function Navbar({ nav }) {
                           key={index}
                           className="relative dark:text-gray-200"
                         >
-                          <Link
-                            to={path}
-                            className={`text-center`}
-                            onClick={() => {
-                              toggleMobileSidebar();
-                              scrollToTop();
-                            }}
-                          >
-                            <div> {name}</div>
-                          </Link>
+                          {path ? (
+                            <NavLink
+                              to={path}
+                              className={`text-center`}
+                              onClick={() => {
+                                toggleMobileSidebar();
+                                scrollToTop();
+                              }}
+                              activeClassName="text-intelzy"
+                            >
+                              <div> {name}</div>
+                            </NavLink>
+                          ) : (
+                            <a
+                              href="https://medium.com/@intelzy"
+                              target="new tab"
+                              className={`text-center`}
+                              onClick={() => {
+                                scrollToTop();
+                              }}
+                            >
+                              <div> {name}</div>
+                            </a>
+                          )}
                         </div>
                       );
                     })}

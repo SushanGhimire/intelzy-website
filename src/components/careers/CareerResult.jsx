@@ -3,7 +3,7 @@ import RecentJobs from "./RecentJobs";
 import TitleSubCat from "./TitleSubCat";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
-function CareerResult({ setNav }) {
+function CareerResult() {
   const [jobDetail, setJobDetail] = React.useState([]);
   const { slug } = useParams();
   React.useEffect(() => {
@@ -19,11 +19,7 @@ function CareerResult({ setNav }) {
         console.log(err);
       });
     // eslint-disable-next-line
-  }, []);
-  React.useEffect(() => {
-    setNav(window.location.pathname.split("/")[1]);
-    // eslint-disable-next-line
-  }, []);
+  }, [slug]);
   return (
     <div className="flex flex-col ">
       {/* <FrontPage

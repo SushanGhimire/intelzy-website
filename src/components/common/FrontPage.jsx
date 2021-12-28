@@ -48,8 +48,8 @@ function FrontPage({ header, des, start, scroll }) {
                   fontWeight: 800,
 
                   background: "linear-gradient(#333,#F8373F)",
-                  webkitBackgroundClip: "text",
-                  webkitTextFillColor: "transparent",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
               >
                 {header}
