@@ -1,5 +1,4 @@
 import React from "react";
-import PartnerSlider from "./PartnerSlider";
 import carbonpay from "../../assets/images/partners/carbonpay.png";
 import garvi from "../../assets/images/partners/garvi.png";
 import maharani from "../../assets/images/partners/maharani.png";

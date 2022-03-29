@@ -11,6 +11,8 @@ import innovation from "../../assets/images/innovation.svg";
 import ThreeJsPart from "./ThreeJsPart";
 import Partners from "./Partners";
 import Newslatters from "./Newslatters";
+import BillingSoftware from "./BillingSoftware";
+import SoftwareRating from "./SoftwareRating";
 function Home() {
   let flexCard = [
     {
@@ -57,6 +59,8 @@ function Home() {
         );
       })}
       <ThreeJsPart />
+      <BillingSoftware />
+      <SoftwareRating />
       <Partners />
       <Newslatters />
     </div>
