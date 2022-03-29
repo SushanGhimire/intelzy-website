@@ -44,7 +44,7 @@ function FrontPage({ header, des, start, scroll }) {
                 className=" font-black text-gray-800 dark:text-gray-200"
                 style={{
                   lineHeight: 1.2,
-                  fontSize: window.innerWidth < 1024 ? "48spx" : "72px",
+                  fontSize: window.innerWidth < 1024 ? "48px" : "72px",
                   fontWeight: 800,
 
                   background: "linear-gradient(#333,#F8373F)",

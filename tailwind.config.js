@@ -71,6 +71,7 @@ module.exports = {
         footer: "#e4e8ec",
         // footer: "#d1d3d6",
         intelzy: "#F8373F",
+        lighGray: "#F4F6FA",
       },
       spacing: {
         100: "30rem",
