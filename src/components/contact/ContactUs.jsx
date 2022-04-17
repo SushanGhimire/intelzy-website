@@ -39,7 +39,7 @@ function ContactUs() {
                 Follow us on
               </div>
               <div className="flex space-x-1 dark:bg-gray-900 ">
-                <a href="https://www.twitter.com" target="new tab">
+                <a href="https://twitter.com/intelzy/" target="new tab">
                   <img
                     src={darkmode ? TwitterLight : Twitter}
                     alt=""
@@ -47,21 +47,24 @@ function ContactUs() {
                   />
                 </a>
 
-                <a href="https://www.linkedin.com" target="new tab">
+                <a
+                  href="https://www.linkedin.com/company/intelzy"
+                  target="new tab"
+                >
                   <img
                     src={darkmode ? LinkedinLight : Linkedin}
                     alt=""
                     className="w-7"
                   />
                 </a>
-                <a href="https://www.facebook.com" target="new tab">
+                <a href="https://www.facebook.com/intelzy" target="new tab">
                   <img
                     src={darkmode ? FacebookLight : Facebook}
                     alt=""
                     className="w-7"
                   />
                 </a>
-                <a href="https://www.google.com" target="new tab">
+                <a href="https://github.com/Intelzy" target="new tab">
                   <img
                     src={darkmode ? githubLight : github}
                     alt=""
