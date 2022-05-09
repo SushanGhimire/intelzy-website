@@ -9,6 +9,7 @@ import retail from "../../assets/images/partners/retail.svg";
 import renaissance from "../../assets/images/partners/renaissance.svg";
 import prime from "../../assets/images/partners/prime.png";
 import graphicMargha from "../../assets/images/partners/graphic-margha.PNG";
+import citylights from "../../assets/images/partners/cityLogo.png";
 
 const logos = [
   {
@@ -22,6 +23,10 @@ const logos = [
   {
     img: retail,
     link: "https://retailscout.io/",
+  },
+  {
+    img: citylights,
+    link: "https://citylights-bistro.netlify.app/",
   },
   {
     img: shine,
